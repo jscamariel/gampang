@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME="gampang.db";
-    public static final String TABLE_NAME="kalkulator_gampang";
+    public static final String TABLE_NAME="table_gampang";
     public static final String COL_1="nama_barang";
     public static final String COL_2="harga";
 
@@ -22,7 +22,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
 
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table kalkulator_gampang(nama_barang text null,harga text null);");
+        db.execSQL("create table table_gampang(nama_barang text null,harga text null);");
     }
 
     @Override
@@ -48,7 +48,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //metode untuk mengambil data
     public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from kalkulator_gampang", null);
+        Cursor res = db.rawQuery("select * from table_gampang", null);
         return res;
     }
 
