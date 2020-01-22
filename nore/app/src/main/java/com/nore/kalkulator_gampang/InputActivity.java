@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-//import static com.nore.kalkulator_gampang.DatabaseHelper.TABLE_NAME;
+import static com.nore.kalkulator_gampang.DatabaseHelper.TABLE_NAME;
 
 public class InputActivity extends AppCompatActivity {
     EditText isi_nama;
@@ -17,13 +17,13 @@ public class InputActivity extends AppCompatActivity {
     Button ok;
     String input_nama;
     String input_harga;
-    //DatabaseHelper BantuDb;
+    DatabaseHelper BantuDb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input);
 
-        //BantuDb = new DatabaseHelper(this);
+        BantuDb = new DatabaseHelper(this);
         isi_nama = (EditText) findViewById(R.id.nama) ;
         isi_harga = (EditText) findViewById(R.id.harga) ;
         ok = (Button) findViewById(R.id.btn_ok);
@@ -35,7 +35,7 @@ public class InputActivity extends AppCompatActivity {
                 input_nama = isi_nama.getText().toString();
                 input_harga = isi_harga.getText().toString();
 
-                //boolean isInserted = BantuDb.insertData(input_nama,input_harga);
+                boolean isInserted = BantuDb.insertData(input_nama,input_harga);
                 //if(isInserted == true)
                 //    Toast.makeText(InputActivity.this,"Data Tersimpan",Toast.LENGTH_LONG).show();
                 //else

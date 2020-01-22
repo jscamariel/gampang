@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import static com.nore.kalkulator_gampang.DatabaseHelper.TABLE_NAME;
+//import static com.nore.kalkulator_gampang.DatabaseHelper.TABLE_NAME;
 
 public class MainActivity extends AppCompatActivity  { //implements ExampleDialog.ExampleDialogListener
     TextView tv_nama;
@@ -22,14 +22,14 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
 
     TextView tv_total;
 
-   DatabaseHelper BantuDb;
+   //DatabaseHelper BantuDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BantuDb = new DatabaseHelper(this);
+        //BantuDb = new DatabaseHelper(this);
         tv_nama=(TextView) findViewById(R.id.edit_nama); //Button
         tv_harga=(TextView) findViewById(R.id.edit_harga);
         btn_minus = (Button) findViewById(R.id.minus);
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         String harga_barang = ganti.getStringExtra("harga_barang");
         tv_nama.setText(nama_barang);
 
-        boolean isInserted = BantuDb.insertData(tv_nama.getText().toString(),tv_harga.getText().toString());
+        //boolean isInserted = BantuDb.insertData(tv_nama.getText().toString(),tv_harga.getText().toString());
 
     }
 
