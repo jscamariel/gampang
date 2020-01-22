@@ -8,10 +8,10 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="167dp"
+        android:layout_width="95dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="160dp"
         android:hint="tulis nama daganganmu"
         android:text="Nama:"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,8 +21,8 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="262dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="252dp"
         android:hint="tulis harganya"
         android:text="Harga:"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,9 +54,20 @@
         android:id="@+id/btn_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="401dp"
-        android:text="Ok"
+        android:layout_marginTop="360dp"
+        android:layout_marginEnd="68dp"
+        android:text="Done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="360dp"
+        android:text="Cancel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
