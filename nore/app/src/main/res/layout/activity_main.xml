@@ -43,7 +43,7 @@
             android:textSize="30dp" />
 
         <Button
-            android:id="@+id/reset"
+            android:id="@+id/btn_reset"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="left"
