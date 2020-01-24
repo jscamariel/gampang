@@ -1,8 +1,11 @@
 package com.nore.kalkulator_gampang;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,17 +36,46 @@ public class recycleview extends RecyclerView.Adapter<recycleview.NamaViewHolder
     }
 
     public  class  NamaViewHolder extends  RecyclerView.ViewHolder{
-
-
-        TextView nama;
+        Button nama;
         //TextView harga;
+        TextView jml;
+        int qty = 0;
+        Button minus;
+        DatabaseHelper BantuDb;
 
         public NamaViewHolder(android.view.View view) {
-
             super(view);
-            nama = (TextView) itemView.findViewById(R.id.edit_nama);
+            nama = (Button) itemView.findViewById(R.id.edit_nama);
             //harga = (TextView) itemView.findViewById(R.id.edit_harga);
+            jml = (TextView) itemView.findViewById(R.id.qty);
+            minus = (Button) itemView.findViewById(R.id.btn_minus);
 
+            nama.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    qty++;
+                    jml.setText(""+qty);
+                }
+            });
+
+            minus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(qty!=0){
+                        qty--;
+                        jml.setText(""+qty);
+                    }
+                }
+            });
+
+            nama.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    int res = BantuDb.deleteData(nama.getText().toString());
+
+                    return false;
+                }
+            });
         }
     }
 
@@ -53,5 +85,9 @@ public class recycleview extends RecyclerView.Adapter<recycleview.NamaViewHolder
     public  recycleview (ArrayList nama){ //ArrayList harga
         this.nama=nama;
         //this.harga=harga;
+    }
+
+    public interface OnNoteListener{
+        void onNoteClick(int postion);
     }
 }
