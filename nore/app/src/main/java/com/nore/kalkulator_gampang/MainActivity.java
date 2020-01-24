@@ -17,12 +17,12 @@ import java.util.ArrayList;
 //import static com.nore.kalkulator_gampang.DatabaseHelper.TABLE_NAME;
 
 public class MainActivity extends AppCompatActivity  { //implements ExampleDialog.ExampleDialogListener
-    TextView tv_nama;
-    TextView tv_harga;
+    //TextView tv_nama;
+    //TextView tv_harga;
     Button btn_minus;
     Button btn_add;
-    TextView jml;
-    int qty = 0;
+    //TextView jml;
+    //int qty = 0;
     Button btn_reset;
 
     TextView tv_total;
@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         //daftarBrg.setAdapter(new Adapter(nama));
 
 
-        tv_nama=(TextView) findViewById(R.id.edit_nama); //Button
-        tv_harga=(TextView) findViewById(R.id.edit_harga);
+        //tv_nama=(TextView) findViewById(R.id.edit_nama); //Button
+        //tv_harga=(TextView) findViewById(R.id.edit_harga);
         btn_minus = (Button) findViewById(R.id.btn_minus);
         btn_add = (Button) findViewById(R.id.add);
         btn_add.setOnClickListener(new View.OnClickListener() {
@@ -66,57 +66,57 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
                 startActivity(tambah);
             }
         });
-        jml = (TextView) findViewById(R.id.qty); ///tadi salah
-        jml.setText(""+qty);
+        //jml = (TextView) findViewById(R.id.qty); ///tadi salah
+        //jml.setText(""+qty);
         btn_reset=(Button) findViewById(R.id.btn_reset);
         tv_total = (TextView) findViewById(R.id.total);
 
-        tv_nama.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                qty++;
-                jml.setText(""+qty);
-            }
-        });
+        //tv_nama.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+        //        qty++;
+        //        jml.setText(""+qty);
+        //    }
+        //});
 
-        btn_minus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(qty!=0){
-                    qty--;
-                    jml.setText(""+qty);
-                }
-            }
-        });
+        //btn_minus.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+        //        if(qty!=0){
+        //            qty--;
+        //            jml.setText(""+qty);
+        //        }
+        //    }
+        //});
 
-        btn_reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                qty = 0 ;
-                jml.setText(""+qty);
-            }
-        });
+        //btn_reset.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v){
+        //        qty = 0 ;
+        //        jml.setText(""+qty);
+        //    }
+        //});
 
-        tv_total.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showMessage("Detail Pembayaran",tv_nama.getText().toString());
-            }
-        });
+        //tv_total.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+        //        showMessage("Detail Pembayaran",tv_nama.getText().toString());
+        //    }
+        //});
 
         Intent ganti = getIntent();
-        String nama_barang = ganti.getStringExtra("nama_barang");
-        String harga_barang = ganti.getStringExtra("harga_barang");
+        //String nama_barang = ganti.getStringExtra("isi_barang");
+        //String harga_barang = ganti.getStringExtra("isi_harga");
         //tv_nama.setText(nama_barang);
 
         //boolean isInserted = BantuDb.insertData(tv_nama.getText().toString(),tv_harga.getText().toString());
 
     }
 
-    public void openDialog(){
-        ExampleDialog exampleDialog = new ExampleDialog();
-        exampleDialog.show(getSupportFragmentManager(),"example dialog");
-    }
+    //public void openDialog(){
+    //    ExampleDialog exampleDialog = new ExampleDialog();
+    //    exampleDialog.show(getSupportFragmentManager(),"example dialog");
+    //}
 
     //@Override
     //public  void applyTexts(String nama, String harga){
@@ -124,14 +124,13 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
     //    tv_harga.setText(harga);
     //}
 
-    public void showMessage(String title, String message){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(message);
+    //public void showMessage(String title, String message){
+    //    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    //    builder.setCancelable(true);
+    //    builder.setTitle(title);
+    //    builder.setMessage(message);
         //builder.setMessage(tv_nama.getText().toString());
-        builder.show();
-    }
+    //    builder.show();
+    //}
 
 }

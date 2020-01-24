@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/nama"
+        android:id="@+id/isi_nama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="146dp"
@@ -41,7 +41,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/harga"
+        android:id="@+id/isi_harga"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="238dp"
