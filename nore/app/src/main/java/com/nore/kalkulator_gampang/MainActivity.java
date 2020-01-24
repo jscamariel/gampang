@@ -2,6 +2,8 @@ package com.nore.kalkulator_gampang;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,6 +30,12 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        RecyclerView daftarTeman = (RecyclerView) findViewById(R.id.daftarBarang);
+
+        daftarTeman.setLayoutManager(new LinearLayoutManager(this));
+        String[] nama = {"Adi","Budi"};
+        daftarTeman.setAdapter(new Adapter(nama));
 
         //BantuDb = new DatabaseHelper(this);
         tv_nama=(TextView) findViewById(R.id.edit_nama); //Button
