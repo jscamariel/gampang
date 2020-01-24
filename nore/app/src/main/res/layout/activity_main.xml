@@ -23,24 +23,24 @@
             android:textSize="30dp"
             android:textColor="#fff" />
 
+
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="20dp"
             android:id="@+id/daftarBarang"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             app:layout_editor_absoluteX="1dp"
             app:layout_editor_absoluteY="1dp"
-            tools:ignore="MissingConstraints"/>
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_gravity="left"
             android:text="Total Harga"
             android:textColor="#3F51B5"
             android:textSize="30dp" />
-
 
         <Button
             android:id="@+id/reset"
