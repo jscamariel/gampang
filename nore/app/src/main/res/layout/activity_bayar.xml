@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/totalbayar"
         android:layout_width="200dp"
         android:layout_height="45dp"
         android:layout_marginTop="60dp"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/seratus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/jml1"
         android:layout_width="35dp"
         android:layout_height="30dp"
         android:layout_marginStart="160dp"
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/duaratus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
@@ -56,7 +56,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/jml2"
         android:layout_width="35dp"
         android:layout_height="30dp"
         android:layout_marginStart="160dp"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/limaratus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
@@ -75,7 +75,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/jml3"
         android:layout_width="35dp"
         android:layout_height="30dp"
         android:layout_marginStart="160dp"
@@ -84,7 +84,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/seribu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
@@ -94,7 +94,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/jml4"
         android:layout_width="35dp"
         android:layout_height="30dp"
         android:layout_marginStart="160dp"
@@ -103,7 +103,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/duaribu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
@@ -113,7 +113,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/jml5"
         android:layout_width="35dp"
         android:layout_height="30dp"
         android:layout_marginStart="160dp"
@@ -122,7 +122,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/limaribu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
@@ -132,7 +132,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/jml6"
         android:layout_width="35dp"
         android:layout_height="30dp"
         android:layout_marginTop="160dp"
@@ -141,7 +141,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/sepuluhribu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="210dp"
@@ -151,7 +151,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/jml7"
         android:layout_width="35dp"
         android:layout_height="30dp"
         android:layout_marginTop="219dp"
@@ -160,7 +160,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/duapuluhribu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="270dp"
@@ -170,7 +170,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/jml8"
         android:layout_width="35dp"
         android:layout_height="30dp"
         android:layout_marginTop="278dp"
@@ -179,7 +179,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/limapuluhribu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="330dp"
@@ -189,7 +189,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/jml9"
         android:layout_width="35dp"
         android:layout_height="30dp"
         android:layout_marginTop="337dp"
@@ -198,7 +198,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/seratusribu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="390dp"
@@ -208,7 +208,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/jml10"
         android:layout_width="35dp"
         android:layout_height="30dp"
         android:layout_marginTop="396dp"
@@ -217,7 +217,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/kembalian"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginStart="46dp"
@@ -229,9 +229,11 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="451dp"
         android:text="Kembalian :"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="451dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

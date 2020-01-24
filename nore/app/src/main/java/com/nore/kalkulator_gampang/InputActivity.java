@@ -12,6 +12,7 @@ public class InputActivity extends AppCompatActivity {
     EditText isi_nama;
     EditText isi_harga;
     Button btn_ok;
+    Button btn_cancel;
     DatabaseHelper BantuDb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class InputActivity extends AppCompatActivity {
         isi_nama = (EditText) findViewById(R.id.isi_nama) ;
         isi_harga = (EditText) findViewById(R.id.isi_harga) ;
         btn_ok = (Button) findViewById(R.id.btn_ok);
+        btn_cancel = (Button) findViewById(R.id.btn_cancel);
 
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +43,14 @@ public class InputActivity extends AppCompatActivity {
 
                 }
 
+            }
+        });
+
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent kembali = new Intent(InputActivity.this,MainActivity.class);
+                startActivity(kembali);
             }
         });
     }

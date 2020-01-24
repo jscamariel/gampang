@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
    private ArrayList nama;
    //private ArrayList harga;
 
+    Button bayar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +73,8 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         btn_reset=(Button) findViewById(R.id.btn_reset);
         tv_total = (TextView) findViewById(R.id.total);
 
+        bayar = (Button) findViewById(R.id.bayar);
+
         //tv_nama.setOnClickListener(new View.OnClickListener() {
         //    @Override
         //    public void onClick(View v) {
@@ -105,12 +109,31 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         //});
 
         Intent ganti = getIntent();
+
+
         //String nama_barang = ganti.getStringExtra("isi_barang");
         //String harga_barang = ganti.getStringExtra("isi_harga");
         //tv_nama.setText(nama_barang);
 
         //boolean isInserted = BantuDb.insertData(tv_nama.getText().toString(),tv_harga.getText().toString());
 
+        bayar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent membayar = new Intent(MainActivity.this,Bayar.class);
+                startActivity(membayar);
+            }
+        });
+
+        btn_reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
+        Intent kembali = getIntent();
     }
 
     //public void openDialog(){

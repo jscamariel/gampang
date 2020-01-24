@@ -51,14 +51,16 @@
             android:text="CLEAR"
             android:textColor="#FFFFFF"
             android:textSize="25dp" />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#9C27B0"
-                android:text="Bayar"
-                android:layout_gravity="right"
-                android:textColor="#FFFFFF"
-                android:textSize="25dp"/>
+
+        <Button
+            android:id="@+id/bayar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="#9C27B0"
+            android:text="Bayar"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
 
 
     </LinearLayout>
