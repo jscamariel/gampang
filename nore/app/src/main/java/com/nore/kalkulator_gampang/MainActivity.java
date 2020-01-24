@@ -6,10 +6,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 //import static com.nore.kalkulator_gampang.DatabaseHelper.TABLE_NAME;
 
@@ -24,23 +27,36 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
 
     TextView tv_total;
 
-   //DatabaseHelper BantuDb;
+   DatabaseHelper BantuDb;
+   private ArrayList nama;
+   //private ArrayList harga;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView daftarTeman = (RecyclerView) findViewById(R.id.daftarBarang);
+        BantuDb = new DatabaseHelper(this);
+        final RecyclerView daftarBrg = (RecyclerView) findViewById(R.id.daftarBarang);
+        daftarBrg.setLayoutManager(new LinearLayoutManager(this));
 
-        daftarTeman.setLayoutManager(new LinearLayoutManager(this));
-        String[] nama = {"Adi","Budi"};
-        daftarTeman.setAdapter(new Adapter(nama));
+        nama = new ArrayList<>();
+        //harga = new ArrayList<>();
+        Cursor res = BantuDb.getAllData();
+        res.moveToFirst();
+        for (int count = 0; count < res.getCount(); count++)
+        {
+            res.moveToPosition(count);
+            nama.add(res.getString(0));
+            //harga.add(res.getString(1));
+        }
+        daftarBrg.setAdapter(new recycleview(nama)); //harga
+        //daftarBrg.setAdapter(new Adapter(nama));
 
-        //BantuDb = new DatabaseHelper(this);
+
         tv_nama=(TextView) findViewById(R.id.edit_nama); //Button
         tv_harga=(TextView) findViewById(R.id.edit_harga);
-        btn_minus = (Button) findViewById(R.id.minus);
+        btn_minus = (Button) findViewById(R.id.btn_minus);
         btn_add = (Button) findViewById(R.id.add);
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +68,7 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         });
         jml = (TextView) findViewById(R.id.qty); ///tadi salah
         jml.setText(""+qty);
-        btn_reset=(Button) findViewById(R.id.reset);
+        btn_reset=(Button) findViewById(R.id.btn_reset);
         tv_total = (TextView) findViewById(R.id.total);
 
         tv_nama.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +107,7 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         Intent ganti = getIntent();
         String nama_barang = ganti.getStringExtra("nama_barang");
         String harga_barang = ganti.getStringExtra("harga_barang");
-        tv_nama.setText(nama_barang);
+        //tv_nama.setText(nama_barang);
 
         //boolean isInserted = BantuDb.insertData(tv_nama.getText().toString(),tv_harga.getText().toString());
 
@@ -100,7 +116,6 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
     public void openDialog(){
         ExampleDialog exampleDialog = new ExampleDialog();
         exampleDialog.show(getSupportFragmentManager(),"example dialog");
-
     }
 
     //@Override
