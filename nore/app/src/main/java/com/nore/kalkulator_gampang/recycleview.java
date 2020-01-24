@@ -35,7 +35,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.NamaViewHolder
         return nama.size();
     }
 
-    public  class  NamaViewHolder extends  RecyclerView.ViewHolder{
+    public  class  NamaViewHolder extends RecyclerView.ViewHolder{
         Button nama;
         //TextView harga;
         TextView jml;
@@ -45,6 +45,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.NamaViewHolder
 
         public NamaViewHolder(android.view.View view) {
             super(view);
+            //BantuDb = new DatabaseHelper(this);
             nama = (Button) itemView.findViewById(R.id.edit_nama);
             //harga = (TextView) itemView.findViewById(R.id.edit_harga);
             jml = (TextView) itemView.findViewById(R.id.qty);
@@ -72,7 +73,6 @@ public class recycleview extends RecyclerView.Adapter<recycleview.NamaViewHolder
                 @Override
                 public boolean onLongClick(View v) {
                     int res = BantuDb.deleteData(nama.getText().toString());
-
                     return false;
                 }
             });
