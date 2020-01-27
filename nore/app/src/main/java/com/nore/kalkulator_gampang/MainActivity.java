@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
 
    DatabaseHelper BantuDb;
    private ArrayList nama;
-   //private ArrayList harga;
+   private ArrayList harga;
 
     Button bayar;
 
@@ -43,16 +43,16 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         daftarBrg.setLayoutManager(new LinearLayoutManager(this));
 
         nama = new ArrayList<>();
-        //harga = new ArrayList<>();
+        harga = new ArrayList<>();
         Cursor res = BantuDb.getAllData();
         res.moveToFirst();
         for (int count = 0; count < res.getCount(); count++)
         {
             res.moveToPosition(count);
             nama.add(res.getString(0));
-            //harga.add(res.getString(1));
+            harga.add(res.getString(1));
         }
-        daftarBrg.setAdapter(new recycleview(nama)); //harga
+        daftarBrg.setAdapter(new recycleview(nama,harga)); //harga
         //daftarBrg.setAdapter(new Adapter(nama));
 
 
@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
             @Override
             public void onClick(View v) {
 
+                //Cursor res = BantuDB.getData(xnim.getText().toString());
             }
         });
 

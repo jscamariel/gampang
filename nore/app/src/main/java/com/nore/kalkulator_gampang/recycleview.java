@@ -1,5 +1,6 @@
 package com.nore.kalkulator_gampang;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,12 +23,27 @@ public class recycleview extends RecyclerView.Adapter<recycleview.NamaViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NamaViewHolder namaViewHolder, int i) {
+    public void onBindViewHolder(@NonNull NamaViewHolder namaViewHolder, final int i) {
         String NAMA = (String) nama.get(i);
-        //String HARGA = (String) harga.get(i);
+        String HARGA = (String) harga.get(i);
 
         namaViewHolder.nama.setText(NAMA);
-        //namaViewHolder.harga.setText(HARGA);
+        namaViewHolder.harga.setText(HARGA);
+
+        namaViewHolder.nama.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                nama.remove(i);
+                notifyItemRemoved(i);
+                return false;
+            }
+        });
+
+    }
+
+    public void menghapus(int position) {
+        nama.remove(position);
+        notifyItemRemoved(position);
     }
 
     @Override
@@ -37,7 +53,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.NamaViewHolder
 
     public  class  NamaViewHolder extends RecyclerView.ViewHolder{
         Button nama;
-        //TextView harga;
+        TextView harga;
         TextView jml;
         int qty = 0;
         Button minus;
@@ -47,7 +63,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.NamaViewHolder
             super(view);
             //BantuDb = new DatabaseHelper(this);
             nama = (Button) itemView.findViewById(R.id.edit_nama);
-            //harga = (TextView) itemView.findViewById(R.id.edit_harga);
+            harga = (TextView) itemView.findViewById(R.id.edit_harga);
             jml = (TextView) itemView.findViewById(R.id.qty);
             minus = (Button) itemView.findViewById(R.id.btn_minus);
 
@@ -69,22 +85,25 @@ public class recycleview extends RecyclerView.Adapter<recycleview.NamaViewHolder
                 }
             });
 
-            nama.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    int res = BantuDb.deleteData(nama.getText().toString());
-                    return false;
-                }
-            });
+            //nama.setOnLongClickListener(new View.OnLongClickListener() {
+            //    @Override
+            //    public boolean onLongClick(View v) {
+            //        int res = BantuDb.deleteData(nama.getText().toString());
+            //        return false;
+            //    }
+            //});
         }
     }
 
-    private ArrayList nama;
-    //private ArrayList harga;
+    private Context context;
 
-    public  recycleview (ArrayList nama){ //ArrayList harga
+
+    private ArrayList nama;
+    private ArrayList harga;
+
+    public  recycleview (ArrayList nama, ArrayList harga){ //ArrayList harga
         this.nama=nama;
-        //this.harga=harga;
+        this.harga=harga;
     }
 
     public interface OnNoteListener{
