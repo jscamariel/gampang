@@ -93,6 +93,10 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         //    }
         //});
 
+
+
+
+
         //btn_reset.setOnClickListener(new View.OnClickListener() {
         //    @Override
         //    public void onClick(View v){

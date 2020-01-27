@@ -30,6 +30,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.NamaViewHolder
         namaViewHolder.nama.setText(NAMA);
         namaViewHolder.harga.setText(HARGA);
 
+        
+
         namaViewHolder.nama.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -38,6 +40,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.NamaViewHolder
                 return false;
             }
         });
+
+
 
     }
 
