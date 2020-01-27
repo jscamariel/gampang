@@ -9,26 +9,30 @@
 
     <EditText
         android:id="@+id/isi_nama"
-        android:layout_width="345dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="322dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Nama Barang, Contoh : Nasi Putih"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/isi_harga"
-        android:layout_width="345dp"
-        android:layout_height="63dp"
+        android:layout_width="322dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="22dp"
         android:layout_marginTop="156dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Harga Barang, contoh : 5000~9999999"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -36,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="252dp"
-        android:layout_marginEnd="160dp"
+        android:layout_marginEnd="117dp"
         android:background="#108610"
         android:text="Done"
         android:textColor="#ffffff"
@@ -48,7 +52,7 @@
         android:id="@+id/btn_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="22dp"
         android:layout_marginTop="252dp"
         android:background="#108610"
         android:text="Cancel"
