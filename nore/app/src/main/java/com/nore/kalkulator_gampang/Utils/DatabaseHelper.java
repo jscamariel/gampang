@@ -86,7 +86,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**Query only 1 record**/
-    public Barang getPerson(long id){
+    public Barang getBarang(long id){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT  * FROM " + TABLE_NAME + " WHERE _id="+ id;
         Cursor cursor = db.rawQuery(query, null);

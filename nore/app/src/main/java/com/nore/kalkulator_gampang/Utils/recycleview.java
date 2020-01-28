@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.nore.kalkulator_gampang.EditActivity;
 import com.nore.kalkulator_gampang.MainActivity;
 import com.nore.kalkulator_gampang.R;
 import com.nore.kalkulator_gampang.Model.Barang;
@@ -134,7 +135,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
     }
 
     private void goToUpdateActivity(long barangId){
-        Intent goToUpdate = new Intent(mContext, MainActivity.class);
+        Intent goToUpdate = new Intent(mContext, EditActivity.class);
         goToUpdate.putExtra("USER_ID", barangId);
         mContext.startActivity(goToUpdate);
     }
