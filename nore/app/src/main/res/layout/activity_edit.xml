@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0DD116"
     android:orientation="vertical"
     android:padding="10dp"
     tools:context="com.nore.kalkulator_gampang.EditActivity">
@@ -14,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Update Data Barang"
+        android:textColor="#ffffff"
         android:textAlignment="center" />
 
     <EditText
@@ -37,6 +39,8 @@
         android:id="@+id/updateBarangButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update" />
+        android:background="#108610"
+        android:text="Update"
+        android:textColor="#ffffff" />
 
 </LinearLayout>
