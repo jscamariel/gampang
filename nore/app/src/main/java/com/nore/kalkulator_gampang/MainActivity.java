@@ -1,6 +1,5 @@
 package com.nore.kalkulator_gampang;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,9 +11,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.nore.kalkulator_gampang.Utils.DatabaseHelper;
+import com.nore.kalkulator_gampang.Utils.recycleview;
+
 import java.util.ArrayList;
 
-//import static com.nore.kalkulator_gampang.DatabaseHelper.TABLE_NAME;
+//import static com.nore.kalkulator_gampang.Utils.DatabaseHelper.TABLE_NAME;
 
 public class MainActivity extends AppCompatActivity  { //implements ExampleDialog.ExampleDialogListener
     //TextView tv_nama;
@@ -27,9 +29,14 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
 
     TextView tv_total;
 
-   DatabaseHelper BantuDb;
-   private ArrayList nama;
-   private ArrayList harga;
+   //private ArrayList nama;
+   //private ArrayList harga;
+
+    private RecyclerView mRecyclerView;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private DatabaseHelper dbHelper;
+    private recycleview adapter;
+    private String filter = "";
 
     Button bayar;
 
@@ -38,9 +45,18 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BantuDb = new DatabaseHelper(this);
-        final RecyclerView daftarBrg = (RecyclerView) findViewById(R.id.daftarBarang);
-        daftarBrg.setLayoutManager(new LinearLayoutManager(this));
+        //initialize the variables
+        mRecyclerView = (RecyclerView)findViewById(R.id.daftarBarang);
+        mRecyclerView.setHasFixedSize(true);
+        // use a linear layout manager
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        //populate recyclerview
+        populaterecyclerView(filter);
+
+        /*
+        dbHelper = new DatabaseHelper(this);
 
         nama = new ArrayList<>();
         harga = new ArrayList<>();
@@ -54,7 +70,7 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         }
         daftarBrg.setAdapter(new recycleview(nama,harga)); //harga
         //daftarBrg.setAdapter(new Adapter(nama));
-
+        */
 
         //tv_nama=(TextView) findViewById(R.id.edit_nama); //Button
         //tv_harga=(TextView) findViewById(R.id.edit_harga);
@@ -160,5 +176,11 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         //builder.setMessage(tv_nama.getText().toString());
     //    builder.show();
     //}
+
+    private void populaterecyclerView(String filter){
+        dbHelper = new DatabaseHelper(this);
+        adapter = new recycleview(dbHelper.barangList(filter), this, mRecyclerView);
+        mRecyclerView.setAdapter(adapter);
+    }
 
 }

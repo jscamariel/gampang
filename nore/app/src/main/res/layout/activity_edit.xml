@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.nore.kalkulator_gampang.EditActivity">
+
+
+    <TextView
+        android:id="@+id/titleUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Data Barang"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/userNameUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nama barang"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/userAgeUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Harga barang"
+        android:inputType="number" />
+
+
+    <Button
+        android:id="@+id/updateUserButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update" />
+
+</LinearLayout>

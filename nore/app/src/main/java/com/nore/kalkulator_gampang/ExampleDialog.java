@@ -8,9 +8,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatDialogFragment;
+
+import com.nore.kalkulator_gampang.Utils.DatabaseHelper;
 
 public class ExampleDialog extends AppCompatDialogFragment {
     EditText edit_nama;
@@ -40,7 +41,7 @@ public class ExampleDialog extends AppCompatDialogFragment {
                         String harga = edit_harga.getText().toString();
                         listener.applyTexts(nama,harga);
                         BantuDb=new DatabaseHelper(getContext());
-                        boolean isInserted = BantuDb.insertData(edit_nama.getText().toString(),edit_harga.getText().toString());
+                        //boolean isInserted = BantuDb.insertData(edit_nama.getText().toString(),edit_harga.getText().toString());
                     }
                 });
 
