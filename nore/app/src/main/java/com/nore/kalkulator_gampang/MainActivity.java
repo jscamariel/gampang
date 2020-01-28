@@ -155,6 +155,7 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
 
 
         Intent kembali = getIntent();
+
     }
 
     //public void openDialog(){

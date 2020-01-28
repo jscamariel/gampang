@@ -151,6 +151,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
                 holder.quantity.setText(""+qty);
             }
         });
+
+
     }
 
     private void goToUpdateActivity(long barangId){
