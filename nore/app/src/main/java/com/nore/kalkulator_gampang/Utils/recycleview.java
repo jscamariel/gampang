@@ -27,6 +27,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
     private Context mContext;
     private RecyclerView mRecyclerV;
 
+    int qty = 0;
+
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
@@ -37,11 +39,16 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
 
         public View layout;
 
+        public Button barangMinus;
+        public TextView quantity;
+
         public ViewHolder(View v) {
             super(v);
             layout = v;
             barangNamaTxtV = (Button) v.findViewById(R.id.edit_nama);
             barangHargaTxtV = (TextView) v.findViewById(R.id.edit_harga);
+            barangMinus = (Button) v.findViewById(R.id.btn_minus);
+            quantity = (TextView) v.findViewById(R.id.qty);
 
         }
     }
@@ -79,14 +86,13 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
         final Barang barang = mBarangList.get(position);
         holder.barangNamaTxtV.setText("" + barang.getNama());
         holder.barangHargaTxtV.setText("Rp." + barang.getHarga());
-
 
         //listen on long click
         holder.barangNamaTxtV.setOnLongClickListener(new View.OnLongClickListener() {
@@ -124,14 +130,27 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
                     }
                 });
                 builder.create().show();
-                return false;
+                return true;
             }
         });
 
-        //listen to single view layout click
+        holder.barangMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(qty!=0){
+                    qty--;
+                    holder.quantity.setText(""+qty);
+                }
+            }
+        });
 
-
-
+        holder.barangNamaTxtV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qty++;
+                holder.quantity.setText(""+qty);
+            }
+        });
     }
 
     private void goToUpdateActivity(long barangId){
