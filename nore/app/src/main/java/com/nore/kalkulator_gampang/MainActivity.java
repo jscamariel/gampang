@@ -151,18 +151,18 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                reset();
+                adapter.reset_qty();
                 //Cursor res = BantuDB.getData(xnim.getText().toString());
             }
         });
 
-
         Intent kembali = getIntent();
-
 
         //baruuuuu
         mSubTotal = adapter.grandTotal(); //harusnya getTotal(a,b);
-        tv_total.setText("Total:" + String.valueOf(mSubTotal));
+        tv_total.setText("Total Harga:" + String.valueOf(mSubTotal));
+
     }
 
     //public void openDialog(){
@@ -189,6 +189,10 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         dbHelper = new DatabaseHelper(this);
         adapter = new recycleview(dbHelper.barangList(filter), this, mRecyclerView);
         mRecyclerView.setAdapter(adapter);
+    }
+
+    public void reset(){
+        tv_total.setText("Total Harga:");
     }
 
 }

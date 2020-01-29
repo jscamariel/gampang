@@ -123,6 +123,9 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
                         notifyItemRangeChanged(position, mBarangList.size());
                         notifyDataSetChanged();
                         //baruuuuu
+                        //if (position == mBarangList.size()-1) {
+                        //    grandTotal();
+                        //}
 
                     }
                 });
@@ -157,7 +160,6 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
 
         //baruuu
         getTotal(Integer.parseInt(barang.getHarga()),qty);
-
     }
 
     private void goToUpdateActivity(long barangId){
@@ -191,9 +193,11 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         for(i = 0 ; i < mBarangList.size(); i++) {
             totalPrice += Integer.parseInt(mBarangList.get(i).getHarga());
         }
-            return  totalPrice;
-
-        //return totalPrice;
+        return  totalPrice;
     }
 
+
+    public void reset_qty(){
+        qty=0;
+    }
 }
