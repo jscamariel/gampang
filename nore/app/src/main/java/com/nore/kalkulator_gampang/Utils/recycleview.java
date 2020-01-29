@@ -3,6 +3,7 @@ package com.nore.kalkulator_gampang.Utils;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.session.MediaSessionManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -121,6 +122,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
                         notifyItemRemoved(position);
                         notifyItemRangeChanged(position, mBarangList.size());
                         notifyDataSetChanged();
+                        //baruuuuu
+
                     }
                 });
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -152,6 +155,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
             }
         });
 
+        //baruuu
+        getTotal(Integer.parseInt(barang.getHarga()),qty);
 
     }
 
@@ -168,4 +173,27 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
     public int getItemCount() {
         return mBarangList.size();
     }
+
+
+    // baruuu
+    public int getTotal(int amount, int value){
+        int quantity = value;
+        int totalamount;
+        int amountall = amount;
+        totalamount = value * amount;
+        grandTotal();
+        return totalamount;
+    }
+
+    public int grandTotal(){
+        int i;
+        int totalPrice = 0;
+        for(i = 0 ; i < mBarangList.size(); i++) {
+            totalPrice += Integer.parseInt(mBarangList.get(i).getHarga());
+        }
+            return  totalPrice;
+
+        //return totalPrice;
+    }
+
 }

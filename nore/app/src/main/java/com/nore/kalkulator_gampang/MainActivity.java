@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
     private recycleview adapter;
     private String filter = "";
 
+    //baruuuuu
+    private int mSubTotal = 0;
+
     Button bayar;
 
     @Override
@@ -156,6 +159,10 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
 
         Intent kembali = getIntent();
 
+
+        //baruuuuu
+        mSubTotal = adapter.grandTotal(); //harusnya getTotal(a,b);
+        tv_total.setText("Total:" + String.valueOf(mSubTotal));
     }
 
     //public void openDialog(){
