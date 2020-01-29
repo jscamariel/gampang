@@ -1,64 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0DD116"
-    tools:context=".InputActivity">
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.nore.kalkulator_gampang.EditActivity">
+
 
     <EditText
         android:id="@+id/isi_nama"
-        android:layout_width="322dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Nama Barang, Contoh : Nasi Putih"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/isi_harga"
-        android:layout_width="322dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="156dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Harga Barang, contoh : 5000~9999999"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:hint="Harga Barang, Contoh : 100~999999"
+        android:inputType="number" />
 
     <Button
         android:id="@+id/btn_ok"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="252dp"
-        android:layout_marginEnd="117dp"
         android:background="#108610"
         android:text="Done"
-        android:textColor="#ffffff"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/btn_cancel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="252dp"
-        android:background="#108610"
+        android:background="#18A018"
         android:text="Cancel"
-        android:textColor="#ffffff"
-        android:textSize="25dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="#ffffff" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

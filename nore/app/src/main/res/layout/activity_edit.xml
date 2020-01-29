@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Nama barang"
+        android:hint="Nama barang (Update)"
         android:inputType="textPersonName" />
 
     <EditText
@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Harga barang"
+        android:hint="Harga barang (Update)"
         android:inputType="number" />
 
 
