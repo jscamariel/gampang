@@ -115,6 +115,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         DatabaseHelper dbHelper = new DatabaseHelper(mContext);
+
+
                         dbHelper.deleteBarangRecord(barang.getId(), mContext);
 
                         mBarangList.remove(position);
@@ -122,6 +124,10 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
                         notifyItemRemoved(position);
                         notifyItemRangeChanged(position, mBarangList.size());
                         notifyDataSetChanged();
+                        if(mContext instanceof MainActivity){
+                            grandTotal();
+                        }
+
                         //baruuuuu
                         //if (position == mBarangList.size()-1) {
                         //    grandTotal();
@@ -159,7 +165,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         });
 
         //baruuu
-        getTotal(Integer.parseInt(barang.getHarga()),qty);
+        //getTotal(Integer.parseInt(barang.getHarga()),qty);
     }
 
     private void goToUpdateActivity(long barangId){
@@ -167,8 +173,6 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         goToUpdate.putExtra("USER_ID", barangId);
         mContext.startActivity(goToUpdate);
     }
-
-
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
@@ -195,7 +199,6 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         }
         return  totalPrice;
     }
-
 
     public void reset_qty(){
         qty=0;

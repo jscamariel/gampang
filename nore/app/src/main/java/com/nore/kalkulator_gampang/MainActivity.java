@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
 
     //baruuuuu
     private int mSubTotal = 0;
+    Context context ;
 
     Button bayar;
 
@@ -140,13 +142,6 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
 
         //boolean isInserted = BantuDb.insertData(tv_nama.getText().toString(),tv_harga.getText().toString());
 
-        bayar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent membayar = new Intent(MainActivity.this,Bayar.class);
-                startActivity(membayar);
-            }
-        });
 
         btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,6 +157,15 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         //baruuuuu
         mSubTotal = adapter.grandTotal(); //harusnya getTotal(a,b);
         tv_total.setText("Total Harga:" + String.valueOf(mSubTotal));
+
+        bayar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent membayar = new Intent(MainActivity.this,Bayar.class);
+                membayar.putExtra("total",mSubTotal);
+                startActivity(membayar);
+            }
+        });
 
     }
 
