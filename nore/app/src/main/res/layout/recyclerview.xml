@@ -12,7 +12,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:background="#9C27B0"
+            android:background="#18A018"
             android:text="-"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="#3F51B5"
+            android:background="#108610"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
 
@@ -44,7 +44,7 @@
 
         <TextView
             android:id="@+id/edit_harga"
-            android:layout_width="wrap_content"
+            android:layout_width="222dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_weight="1"
