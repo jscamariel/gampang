@@ -124,9 +124,9 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
                         notifyItemRemoved(position);
                         notifyItemRangeChanged(position, mBarangList.size());
                         notifyDataSetChanged();
-                        if(mContext instanceof MainActivity){
-                            grandTotal();
-                        }
+                        //if(mContext instanceof MainActivity){
+                        //    grandTotal();
+                        //}
 
                         //baruuuuu
                         //if (position == mBarangList.size()-1) {
