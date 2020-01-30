@@ -7,6 +7,17 @@
     android:background="#0DD116"
     tools:context=".Bayar">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"></LinearLayout>
+    </LinearLayout>
+
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
@@ -25,6 +36,7 @@
         android:layout_height="45dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="15dp"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,6 +56,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="125dp"
         android:layout_marginTop="160dp"
+        android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,6 +76,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="125dp"
         android:layout_marginTop="219dp"
+        android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,6 +96,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="125dp"
         android:layout_marginTop="278dp"
+        android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -101,6 +116,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="125dp"
         android:layout_marginTop="337dp"
+        android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -120,6 +136,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="125dp"
         android:layout_marginTop="396dp"
+        android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -138,7 +155,8 @@
         android:layout_width="35dp"
         android:layout_height="30dp"
         android:layout_marginTop="160dp"
-        android:layout_marginEnd="57dp"
+        android:layout_marginEnd="56dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -158,6 +176,7 @@
         android:layout_height="30dp"
         android:layout_marginTop="219dp"
         android:layout_marginEnd="57dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -177,6 +196,7 @@
         android:layout_height="30dp"
         android:layout_marginTop="278dp"
         android:layout_marginEnd="57dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -196,6 +216,7 @@
         android:layout_height="30dp"
         android:layout_marginTop="337dp"
         android:layout_marginEnd="57dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -215,6 +236,7 @@
         android:layout_height="30dp"
         android:layout_marginTop="396dp"
         android:layout_marginEnd="57dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -223,18 +245,20 @@
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="471dp"
+        android:layout_marginTop="495dp"
+        android:textSize="45dp"
+        android:textColor="#325BEB"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <Button
         android:id="@+id/btn_kembalian"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="451dp"
         android:text="Kembalian :"
-        android:textColor="#3F51B5"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
