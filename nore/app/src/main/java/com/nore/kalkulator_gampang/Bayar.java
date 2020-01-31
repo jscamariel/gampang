@@ -305,7 +305,7 @@ public class Bayar extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10 < pricetotal){
-                    kembalian.setText("Uang kurang");
+                    kembalian.setText("Uang kurang "+String.valueOf((uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal));
                 }else{
                     kembalian.setText("Rp."+String.valueOf((uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal));
                 }

@@ -54,6 +54,7 @@ public class EditActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //call the save person method
                 updateBarang();
+                goBackHome();
             }
         });
         btn_cancel.setOnClickListener(new View.OnClickListener() {

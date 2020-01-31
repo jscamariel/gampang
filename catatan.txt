@@ -6,3 +6,4 @@ lain
 4. untuk menampilkan kembalian masih harus dipencet tulisannya, belum bisa otomatis tampil
 ---5. tampilan recyler view biar nd jauh" jaraknya
 6. membuat tombol kembali, yang tidak numpuk
+7. membuat harga ada titiknya
