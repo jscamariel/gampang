@@ -52,7 +52,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="left"
             android:background="#108610"
-            android:text="CLEAR"
+            android:text="Bersihkan"
             android:textColor="#FFFFFF"
             android:textSize="25dp" />
 

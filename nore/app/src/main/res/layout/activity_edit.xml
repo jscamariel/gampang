@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#108610"
-        android:text="Update"
+        android:text="Perbarui"
         android:textColor="#ffffff" />
 
     <Button
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#18A018"
-        android:text="Cancel"
+        android:text="Batal"
         android:textColor="#ffffff" />
 
 </LinearLayout>
