@@ -19,8 +19,10 @@ import com.nore.kalkulator_gampang.MainActivity;
 import com.nore.kalkulator_gampang.R;
 import com.nore.kalkulator_gampang.Model.Barang;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
@@ -93,7 +95,11 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
 
         final Barang barang = mBarangList.get(position);
         holder.barangNamaTxtV.setText("" + barang.getNama());
-        holder.barangHargaTxtV.setText("Rp." + barang.getHarga());
+        //holder.barangHargaTxtV.setText("Rp." + barang.getHarga());
+        //baruuuuu
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+        holder.barangHargaTxtV.setText(formatRupiah.format((int)Integer.parseInt(barang.getHarga())));
 
         //listen on long click
         holder.barangNamaTxtV.setOnLongClickListener(new View.OnLongClickListener() {
@@ -166,6 +172,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
 
         //baruuu
         //getTotal(Integer.parseInt(barang.getHarga()),qty);
+
     }
 
     private void goToUpdateActivity(long barangId){
@@ -200,7 +207,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         return  totalPrice;
     }
 
-    public void reset_qty(){
+    public int reset_qty(){
         qty=0;
+        return qty;
     }
 }

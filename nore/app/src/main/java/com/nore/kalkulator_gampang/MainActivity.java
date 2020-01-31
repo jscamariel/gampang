@@ -16,7 +16,9 @@ import com.nore.kalkulator_gampang.Utils.DatabaseHelper;
 import com.nore.kalkulator_gampang.Utils.recycleview;
 
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 //import static com.nore.kalkulator_gampang.Utils.DatabaseHelper.TABLE_NAME;
 
@@ -149,7 +151,6 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
 
         //boolean isInserted = BantuDb.insertData(tv_nama.getText().toString(),tv_harga.getText().toString());
 
-
         btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,8 +163,11 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         Intent kembali = getIntent();
 
         //baruuuuu
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
         mSubTotal = adapter.grandTotal(); //harusnya getTotal(a,b);
-        tv_total.setText("Total Harga:" + String.valueOf(mSubTotal));
+        tv_total.setText("Total Harga: "+formatRupiah.format((int)mSubTotal));
+        //tv_total.setText("Total Harga:" + String.valueOf(mSubTotal));
 
         bayar.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class Bayar extends AppCompatActivity {
     TextView totalbayar;
     Button seratus;
@@ -59,6 +62,9 @@ public class Bayar extends AppCompatActivity {
     int uang9;
     int uang10;
 
+    Locale localeID = new Locale("in", "ID");
+    NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,9 +95,11 @@ public class Bayar extends AppCompatActivity {
 
         btn_kembalian = (TextView) findViewById(R.id.btn_kembalian);
 
+
         Intent membayar = getIntent();
         pricetotal = membayar.getIntExtra("total",0);
-        totalbayar.setText("Rp."+String.valueOf(pricetotal));
+        //totalbayar.setText("Rp."+String.valueOf(pricetotal));
+        totalbayar.setText(formatRupiah.format((int)pricetotal));
 
         seratus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -304,10 +312,12 @@ public class Bayar extends AppCompatActivity {
         btn_kembalian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                change = (uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal;
                 if(uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10 < pricetotal){
-                    kembalian.setText("Uang kurang "+String.valueOf((uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal));
+                    kembalian.setText("Kurang "+formatRupiah.format((int)change));
                 }else{
-                    kembalian.setText("Rp."+String.valueOf((uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal));
+                    //change = (uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal;
+                    kembalian.setText(formatRupiah.format((int)change));
                 }
             }
         });

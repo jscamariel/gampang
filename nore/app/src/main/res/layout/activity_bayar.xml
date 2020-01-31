@@ -216,7 +216,7 @@
 
         <TextView
             android:id="@+id/kembalian"
-            android:layout_width="350dp"
+            android:layout_width="400dp"
             android:layout_height="70dp"
             android:textColor="#325BEB"
             android:textSize="35dp" />
