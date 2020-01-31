@@ -207,8 +207,8 @@
         <Button
             android:id="@+id/btn_kembalian"
             android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
             android:background="#033F0D"
             android:text="Kembalian :"
             android:textColor="#FFFFFF"
@@ -219,6 +219,6 @@
             android:layout_width="350dp"
             android:layout_height="70dp"
             android:textColor="#325BEB"
-            android:textSize="40dp" />
+            android:textSize="35dp" />
     </LinearLayout>
 </LinearLayout>
