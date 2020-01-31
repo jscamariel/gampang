@@ -34,33 +34,33 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/seratus"
-            android:layout_width="130dp"
-            android:layout_height="70dp"
-            android:textSize="25dp"
-            android:text="100" />
+    <Button
+        android:id="@+id/seratus"
+        android:layout_width="130dp"
+        android:layout_height="70dp"
+        android:textSize="25dp"
+        android:text="100" />
 
-        <TextView
-            android:id="@+id/jml1"
-            android:layout_width="35dp"
-            android:textColor="#FFFFFF"
-            android:layout_height="40dp"
-            android:textSize="25dp" />
+    <TextView
+        android:id="@+id/jml1"
+        android:layout_width="35dp"
+        android:textColor="#FFFFFF"
+        android:layout_height="40dp"
+        android:textSize="25dp" />
 
-        <Button
-            android:id="@+id/limaribu"
-            android:layout_width="130dp"
-            android:layout_height="70dp"
-            android:textSize="25dp"
-            android:text="5.000" />
+    <Button
+        android:id="@+id/limaribu"
+        android:layout_width="130dp"
+        android:layout_height="70dp"
+        android:textSize="25dp"
+        android:text="5.000" />
 
-        <TextView
-            android:id="@+id/jml6"
-            android:layout_width="35dp"
-            android:textColor="#FFFFFF"
-            android:layout_height="40dp"
-            android:textSize="25dp" />
+    <TextView
+        android:id="@+id/jml6"
+        android:layout_width="35dp"
+        android:textColor="#FFFFFF"
+        android:layout_height="40dp"
+        android:textSize="25dp" />
     </LinearLayout>
 
     <LinearLayout

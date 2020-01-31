@@ -34,7 +34,6 @@
         android:hint="Harga barang (Update)"
         android:inputType="number" />
 
-
     <Button
         android:id="@+id/updateBarangButton"
         android:layout_width="match_parent"
