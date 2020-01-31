@@ -108,7 +108,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         db.execSQL("DELETE FROM "+TABLE_NAME+" WHERE _id='"+id+"'");
-        Toast.makeText(context, "Deleted successfully.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Berhasil dihapus.", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -117,7 +117,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         //you can use the constants above instead of typing the column names
         db.execSQL("UPDATE  "+TABLE_NAME+" SET nama ='"+ updatedbarang.getNama() + "', harga ='" + updatedbarang.getHarga()+ "'  WHERE _id='" + barangId + "'");
-        Toast.makeText(context, "Updated successfully.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Berhasil diperbarui.", Toast.LENGTH_SHORT).show();
 
     }
 }

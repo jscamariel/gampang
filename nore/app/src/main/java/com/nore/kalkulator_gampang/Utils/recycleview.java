@@ -100,9 +100,9 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
             @Override
             public boolean onLongClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-                builder.setTitle("Silahkan pilih");
-                builder.setMessage("Update atau hapus data?");
-                builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
+                builder.setTitle("Silahkan pilih:");
+                builder.setMessage("Perbarui atau hapus data?");
+                builder.setPositiveButton("Perbarui", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
