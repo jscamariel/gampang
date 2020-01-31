@@ -53,8 +53,7 @@ public class InputActivity extends AppCompatActivity {
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent kembali = new Intent(InputActivity.this,MainActivity.class);
-                startActivity(kembali);
+                goBackHome();
             }
         });
     }

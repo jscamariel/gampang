@@ -43,4 +43,12 @@
         android:text="Update"
         android:textColor="#ffffff" />
 
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#18A018"
+        android:text="Cancel"
+        android:textColor="#ffffff" />
+
 </LinearLayout>

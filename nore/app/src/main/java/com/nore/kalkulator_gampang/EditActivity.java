@@ -16,6 +16,7 @@ public class EditActivity extends AppCompatActivity {
     private EditText barangNamaUpdate;
     private EditText barangHargaUpdate;
     private Button mUpdateBtn;
+    private  Button btn_cancel;
 
     private DatabaseHelper dbHelper;
     private long receivedBarangId;
@@ -29,6 +30,7 @@ public class EditActivity extends AppCompatActivity {
         barangNamaUpdate = (EditText)findViewById(R.id.barangNamaUpdate);
         barangHargaUpdate = (EditText)findViewById(R.id.barangHargaUpdate);
         mUpdateBtn = (Button)findViewById(R.id.updateBarangButton);
+        btn_cancel = (Button) findViewById(R.id.btn_cancel);
 
         dbHelper = new DatabaseHelper(this);
 
@@ -52,6 +54,12 @@ public class EditActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //call the save person method
                 updateBarang();
+            }
+        });
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goBackHome();
             }
         });
     }
@@ -78,7 +86,7 @@ public class EditActivity extends AppCompatActivity {
 
         //finally redirect back home
         // NOTE you can implement an sqlite callback then redirect on success delete
-        goBackHome();
+
     }
 
     private void goBackHome(){
