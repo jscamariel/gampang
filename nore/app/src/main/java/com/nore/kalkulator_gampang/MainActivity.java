@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.nore.kalkulator_gampang.Utils.DatabaseHelper;
 import com.nore.kalkulator_gampang.Utils.recycleview;
 
+
 import java.util.ArrayList;
 
 //import static com.nore.kalkulator_gampang.Utils.DatabaseHelper.TABLE_NAME;
@@ -95,6 +96,12 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         tv_total = (TextView) findViewById(R.id.total);
 
         bayar = (Button) findViewById(R.id.bayar);
+
+        //baruuuuu
+        //bayar.setVisibility(View.INVISIBLE);
+
+        //    bayar.setVisibility(1);
+
 
         //tv_nama.setOnClickListener(new View.OnClickListener() {
         //    @Override
