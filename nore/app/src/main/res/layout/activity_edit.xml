@@ -14,9 +14,9 @@
         android:id="@+id/titleUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update Data Barang"
-        android:textColor="#ffffff"
-        android:textAlignment="center" />
+        android:text="Perbarui Data Barang"
+        android:textAlignment="center"
+        android:textColor="#ffffff" />
 
     <EditText
         android:id="@+id/barangNamaUpdate"
