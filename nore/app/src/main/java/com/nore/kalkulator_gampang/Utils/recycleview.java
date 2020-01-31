@@ -100,8 +100,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
             @Override
             public boolean onLongClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-                builder.setTitle("Choose option");
-                builder.setMessage("Update or delete data?");
+                builder.setTitle("Silahkan pilih");
+                builder.setMessage("Update atau hapus data?");
                 builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -111,7 +111,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
 
                     }
                 });
-                builder.setNeutralButton("Delete", new DialogInterface.OnClickListener() {
+                builder.setNeutralButton("Hapus", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         DatabaseHelper dbHelper = new DatabaseHelper(mContext);
@@ -135,7 +135,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
 
                     }
                 });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton("Batal", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
