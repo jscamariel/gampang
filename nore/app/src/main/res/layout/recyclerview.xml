@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
     android:background="#0DD116">
+
+        <Button
+            android:id="@+id/edit_nama"
+            android:layout_width="176dp"
+            android:layout_height="45dp"
+            android:layout_gravity="clip_vertical"
+            android:background="#108610"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_minus"
@@ -18,11 +32,12 @@
             android:textSize="20dp" />
 
         <Button
-            android:id="@+id/edit_nama"
+            android:id="@+id/btn_plus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="#108610"
+            android:layout_gravity="left"
+            android:background="#18A018"
+            android:text="+"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
 
@@ -50,5 +65,7 @@
             android:layout_weight="1"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
+
+        </LinearLayout>
 
 </LinearLayout>

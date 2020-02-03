@@ -56,15 +56,15 @@
             android:textColor="#FFFFFF"
             android:textSize="25dp" />
 
-        <Button
-            android:id="@+id/bayar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="right"
-            android:background="#18A018"
-            android:text="Bayar"
-            android:textColor="#FFFFFF"
-            android:textSize="25dp" />
+            <Button
+                android:id="@+id/bayar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="#18A018"
+                android:text="Bayar"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp" />
 
         </LinearLayout>
     </LinearLayout>
