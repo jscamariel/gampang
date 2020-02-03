@@ -46,6 +46,10 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
     private int mSubTotal = 0;
     Context context ;
 
+    //int amount, value;
+    Locale localeID = new Locale("in", "ID");
+    NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+
     Button bayar;
 
     @Override
@@ -105,28 +109,6 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         //    bayar.setVisibility(1);
 
 
-        //tv_nama.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-        //    public void onClick(View v) {
-        //        qty++;
-        //        jml.setText(""+qty);
-        //    }
-        //});
-
-        //btn_minus.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-        //    public void onClick(View v) {
-        //        if(qty!=0){
-        //            qty--;
-        //            jml.setText(""+qty);
-        //        }
-        //    }
-        //});
-
-
-
-
-
         //btn_reset.setOnClickListener(new View.OnClickListener() {
         //    @Override
         //    public void onClick(View v){
@@ -163,10 +145,15 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         Intent kembali = getIntent();
 
         //baruuuuu
-        Locale localeID = new Locale("in", "ID");
-        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
-        mSubTotal = adapter.grandTotal(); //harusnya getTotal(a,b);
-        tv_total.setText("Total Harga: "+formatRupiah.format((int)mSubTotal));
+
+        mSubTotal = totalsemuane(); //harusnya getTotal(a,b); totalsemuane(amount,value)
+        tv_total.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv_total.setText("Total Harga: "+formatRupiah.format((int)mSubTotal));
+            }
+        });
+
         //tv_total.setText("Total Harga:" + String.valueOf(mSubTotal));
 
         bayar.setOnClickListener(new View.OnClickListener() {
@@ -208,6 +195,15 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
 
     public void reset(){
         tv_total.setText("Total Harga:");
+        adapter.reset_qty();
+    }
+
+    //public int totalsemuane(int amount, int value){
+    //    return adapter.getTotal(amount,value);
+    //}
+
+    public int totalsemuane(){
+        return adapter.getAllTotal();
     }
 
 }

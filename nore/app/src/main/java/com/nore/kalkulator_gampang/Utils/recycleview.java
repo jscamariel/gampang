@@ -31,6 +31,9 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
     private RecyclerView mRecyclerV;
 
     int qty = 0;
+    //baruuu
+    int grandtotal = 0;
+    int subtotal = 0;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -157,7 +160,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
             public void onClick(View v) {
                 if(qty!=0){
                     qty--;
-                    holder.quantity.setText(""+qty);
+                    subtotal = qty * Integer.parseInt(barang.getHarga());
+                    holder.quantity.setText("x"+qty);
                 }
             }
         });
@@ -166,7 +170,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
             @Override
             public void onClick(View v) {
                 qty++;
-                holder.quantity.setText(""+qty);
+                subtotal = qty * Integer.parseInt(barang.getHarga());
+                holder.quantity.setText("x"+qty);
             }
         });
 
@@ -189,26 +194,35 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
 
 
     // baruuu
-    public int getTotal(int amount, int value){
-        int quantity = value;
-        int totalamount;
-        int amountall = amount;
-        totalamount = value * amount;
-        grandTotal();
-        return totalamount;
+    //public int getTotal(int amount, int value){
+    //    int quantity = value;
+    //    int totalamount;
+    //    int amountall = amount;
+    //    totalamount = value * amount;
+    //    grandTotal();
+    //    return totalamount;
+    //}
+
+    public int getAllTotal(){
+        int i;
+        for(i=0; i<mBarangList.size(); i++){
+            grandtotal = grandtotal + subtotal;
+        }
+        return  grandtotal;
     }
 
-    public int grandTotal(){
-        int i;
-        int totalPrice = 0;
-        for(i = 0 ; i < mBarangList.size(); i++) {
-            totalPrice += Integer.parseInt(mBarangList.get(i).getHarga());
-        }
-        return  totalPrice;
-    }
+    //public int grandTotal(){
+    //    int i;
+    //    int totalPrice = 0;
+    //    for(i = 0 ; i < mBarangList.size(); i++) {
+    //        totalPrice += Integer.parseInt(mBarangList.get(i).getHarga());
+    //    }
+    //    return  totalPrice;
+    //}
 
     public int reset_qty(){
-        qty=0;
+        qty = 0;
         return qty;
+        //foreach
     }
 }
