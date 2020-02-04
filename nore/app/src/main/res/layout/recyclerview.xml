@@ -55,15 +55,17 @@
             android:layout_gravity="right"
             android:text="@"
             android:textColor="#FFFFFF"
-            android:textSize="33dp" />
+            android:textSize="20dp" />
 
-                <TextView
-                    android:id="@+id/edit_harga"
-                    android:layout_width="222dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_weight="1"
-                    android:textColor="#FFFFFF"
-                    android:textSize="33dp" />
+        <TextView
+            android:id="@+id/edit_harga"
+            android:layout_width="222dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
         </LinearLayout>
+
 </LinearLayout>

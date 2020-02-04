@@ -8,3 +8,4 @@ lain
 6. membuat tombol kembali, yang tidak numpuk
 ---7. membuat harga ada titiknya
 8. membuat tombol bayar invisible
+9. membuat qty start dari 1 semua
