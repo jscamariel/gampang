@@ -15,7 +15,6 @@ import com.nore.kalkulator_gampang.Utils.DatabaseHelper;
 public class EditActivity extends AppCompatActivity {
     private EditText barangNamaUpdate;
     private EditText barangHargaUpdate;
-    private EditText barangJumlahUpdate;
     private Button mUpdateBtn;
     private  Button btn_cancel;
 
@@ -30,7 +29,6 @@ public class EditActivity extends AppCompatActivity {
         //init
         barangNamaUpdate = (EditText)findViewById(R.id.barangNamaUpdate);
         barangHargaUpdate = (EditText)findViewById(R.id.barangHargaUpdate);
-        barangJumlahUpdate = (EditText) findViewById(R.id.barangJumlahUpdate);
         mUpdateBtn = (Button)findViewById(R.id.updateBarangButton);
         btn_cancel = (Button) findViewById(R.id.btn_cancel);
 
@@ -48,7 +46,6 @@ public class EditActivity extends AppCompatActivity {
         //set field to this user data
         barangNamaUpdate.setText(queriedBarang.getNama());
         barangHargaUpdate.setText(queriedBarang.getHarga());
-        barangJumlahUpdate.setText(queriedBarang.getJumlah());
 
 
         //listen to add button click to update
@@ -71,7 +68,6 @@ public class EditActivity extends AppCompatActivity {
     private void updateBarang(){
         String nama = barangNamaUpdate.getText().toString().trim();
         String harga = barangHargaUpdate.getText().toString().trim();
-        String jumlah = barangJumlahUpdate.getText().toString().trim();
 
         if(nama.isEmpty()){
             //error name is empty
@@ -83,12 +79,8 @@ public class EditActivity extends AppCompatActivity {
             Toast.makeText(this, "You must enter a price", Toast.LENGTH_SHORT).show();
         }
 
-        if(jumlah.isEmpty()){
-            Toast.makeText(this,"You must enter a quantity", Toast.LENGTH_SHORT).show();
-        }
-
         //create updated person
-        Barang updatedBarang = new Barang(nama,harga,jumlah);
+        Barang updatedBarang = new Barang(nama, harga);
 
         //call dbhelper update
         dbHelper.updateBarangRecord(receivedBarangId, this, updatedBarang);

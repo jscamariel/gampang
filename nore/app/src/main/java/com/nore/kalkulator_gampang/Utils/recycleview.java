@@ -3,20 +3,24 @@ package com.nore.kalkulator_gampang.Utils;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.session.MediaSessionManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nore.kalkulator_gampang.EditActivity;
+import com.nore.kalkulator_gampang.MainActivity;
 import com.nore.kalkulator_gampang.R;
 import com.nore.kalkulator_gampang.Model.Barang;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -35,19 +39,19 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         // each data item is just a string in this case
         public Button barangNamaTxtV;
         public TextView barangHargaTxtV;
-        public TextView barangJumlahTxtV;
 
         public View layout;
 
         public Button barangMinus;
+        public TextView quantity;
 
         public ViewHolder(View v) {
             super(v);
             layout = v;
             barangNamaTxtV = (Button) v.findViewById(R.id.edit_nama);
             barangHargaTxtV = (TextView) v.findViewById(R.id.edit_harga);
-            barangJumlahTxtV = (TextView) v.findViewById(R.id.edit_jumlah);
             barangMinus = (Button) v.findViewById(R.id.btn_minus);
+            quantity = (TextView) v.findViewById(R.id.qty);
 
         }
     }
@@ -91,7 +95,6 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
 
         final Barang barang = mBarangList.get(position);
         holder.barangNamaTxtV.setText("" + barang.getNama());
-        holder.barangJumlahTxtV.setText("" + barang.getJumlah());
         //holder.barangHargaTxtV.setText("Rp." + barang.getHarga());
         //baruuuuu
         Locale localeID = new Locale("in", "ID");
@@ -154,7 +157,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
             public void onClick(View v) {
                 if(qty!=0){
                     qty--;
-
+                    holder.quantity.setText(""+qty);
                 }
             }
         });
@@ -163,7 +166,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
             @Override
             public void onClick(View v) {
                 qty++;
-
+                holder.quantity.setText(""+qty);
             }
         });
 

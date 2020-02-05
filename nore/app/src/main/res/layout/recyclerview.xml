@@ -1,41 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#0DD116"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="10dp">
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:background="#0DD116">
 
         <Button
             android:id="@+id/edit_nama"
             android:layout_width="176dp"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
+            android:layout_gravity="clip_vertical"
             android:background="#108610"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/edit_harga"
-            android:layout_width="176dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_toRightOf="@id/edit_nama"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp" />
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_minus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
-            android:layout_below="@id/edit_nama"
-            android:background="#18A018"
-=======
             android:layout_gravity="left"
             android:background="#0CB10C"
->>>>>>> ee9f46c072fbad8a911c73c8b4c1803115e06651
             android:text="-"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
@@ -44,18 +35,13 @@
             android:id="@+id/btn_plus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/edit_nama"
-            android:layout_toRightOf="@id/btn_minus"
+            android:layout_gravity="left"
             android:background="#18A018"
             android:text="+"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
 
         <TextView
-<<<<<<< HEAD
-            android:id="@+id/edit_jumlah"
-            android:layout_width="176dp"
-=======
             android:id="@+id/qty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,28 +65,5 @@
             android:layout_weight="1"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/edit_harga"
-            android:layout_width="222dp"
->>>>>>> ee9f46c072fbad8a911c73c8b4c1803115e06651
-            android:layout_height="wrap_content"
-            android:layout_below="@id/edit_nama"
-            android:layout_alignParentRight="true"
-            android:layout_toRightOf="@id/btn_plus"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp" />
-<<<<<<< HEAD
         </LinearLayout>
 </LinearLayout>
-=======
-
-<<<<<<< HEAD
-</RelativeLayout>
-=======
->>>>>>> f90c91e28ff43a11a6e13689d15a940a6be88fd1
-        </LinearLayout>
-
-</LinearLayout>
->>>>>>> ee9f46c072fbad8a911c73c8b4c1803115e06651
->>>>>>> 1c55d3576ff6748ff4d684186fe4b8c3ad6ecfc6

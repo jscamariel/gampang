@@ -4,15 +4,13 @@ public class Barang {
     private long id;
     private String nama;
     private String harga;
-    private String jumlah;
 
     public Barang() {
     }
 
-    public Barang(String nama, String harga, String jumlah) {
+    public Barang(String nama, String harga) {
         this.nama = nama;
         this.harga = harga;
-        this.jumlah = jumlah;
     }
 
     public long getId() {
@@ -37,14 +35,6 @@ public class Barang {
 
     public void setHarga(String harga) {
         this.harga = harga;
-    }
-
-    public String getJumlah(){
-        return jumlah;
-    }
-
-    public void setJumlah(String jumlah){
-        this.jumlah = jumlah;
     }
 
 }

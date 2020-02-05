@@ -15,7 +15,6 @@ import com.nore.kalkulator_gampang.Utils.DatabaseHelper;
 public class InputActivity extends AppCompatActivity {
     private EditText isi_nama;
     private EditText isi_harga;
-    private EditText isi_jumlah;
     private Button btn_ok;
     private Button btn_cancel;
     private DatabaseHelper dbHelper;
@@ -27,7 +26,6 @@ public class InputActivity extends AppCompatActivity {
         //dbHelper = new DatabaseHelper(this);
         isi_nama = (EditText) findViewById(R.id.isi_nama) ;
         isi_harga = (EditText) findViewById(R.id.isi_harga) ;
-        isi_jumlah = (EditText) findViewById(R.id.isi_jumlah);
         btn_ok = (Button) findViewById(R.id.btn_ok);
         btn_cancel = (Button) findViewById(R.id.btn_cancel);
 
@@ -63,7 +61,6 @@ public class InputActivity extends AppCompatActivity {
     private void saveBarang(){
         String nama = isi_nama.getText().toString().trim();
         String harga = isi_harga.getText().toString().trim();
-        String jumlah = isi_jumlah.getText().toString().trim();
         dbHelper = new DatabaseHelper(this);
 
         if(nama.isEmpty()){
@@ -76,12 +73,8 @@ public class InputActivity extends AppCompatActivity {
             Toast.makeText(this, "You must enter an price", Toast.LENGTH_SHORT).show();
         }
 
-        if(jumlah.isEmpty()){
-            Toast.makeText(this,"You must enter a quantity",Toast.LENGTH_SHORT).show();
-        }
-
         //create new person
-        Barang barang = new Barang(nama,harga,jumlah);
+        Barang barang = new Barang(nama, harga);
         dbHelper.saveNewBarang(barang);
 
         //finally redirect back home

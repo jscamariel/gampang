@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         bayar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent membayar = new Intent(MainActivity.this ,Bayar.class);
+                Intent membayar = new Intent(MainActivity.this,Bayar.class);
                 membayar.putExtra("total",mSubTotal);
                 startActivity(membayar);
             }
