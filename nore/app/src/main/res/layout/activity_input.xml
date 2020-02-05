@@ -49,5 +49,4 @@
         android:background="#18A018"
         android:text="Batal"
         android:textColor="#ffffff" />
-
 </LinearLayout>

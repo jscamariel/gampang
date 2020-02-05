@@ -29,8 +29,13 @@
             android:id="@+id/btn_minus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:layout_below="@id/edit_nama"
             android:background="#18A018"
+=======
+            android:layout_gravity="left"
+            android:background="#0CB10C"
+>>>>>>> ee9f46c072fbad8a911c73c8b4c1803115e06651
             android:text="-"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
@@ -47,8 +52,40 @@
             android:textSize="20dp" />
 
         <TextView
+<<<<<<< HEAD
             android:id="@+id/edit_jumlah"
             android:layout_width="176dp"
+=======
+            android:id="@+id/qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="@"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+<<<<<<< HEAD
+
+        <TextView
+            android:id="@+id/edit_harga"
+            android:layout_width="222dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+=======
+
+        <TextView
+            android:id="@+id/edit_harga"
+            android:layout_width="222dp"
+>>>>>>> ee9f46c072fbad8a911c73c8b4c1803115e06651
             android:layout_height="wrap_content"
             android:layout_below="@id/edit_nama"
             android:layout_alignParentRight="true"
@@ -56,4 +93,11 @@
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
 
+<<<<<<< HEAD
 </RelativeLayout>
+=======
+>>>>>>> f90c91e28ff43a11a6e13689d15a940a6be88fd1
+        </LinearLayout>
+
+</LinearLayout>
+>>>>>>> ee9f46c072fbad8a911c73c8b4c1803115e06651
