@@ -30,7 +30,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
     private Context mContext;
     private RecyclerView mRecyclerV;
 
-    int qty ;
+    int qty =0 ;
+    int value ;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -94,7 +95,6 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-
         final Barang barang = mBarangList.get(position);
         holder.barangNamaTxtV.setText("" + barang.getNama());
         //holder.barangHargaTxtV.setText("Rp." + barang.getHarga());
@@ -157,20 +157,22 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         holder.barangMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                qty = Integer.parseInt(barang.getJumlah());
+                value = Integer.parseInt(barang.getJumlah());
                 if(qty!=0){
                     qty--;
-                    holder.quantity.setText(""+qty);
                 }
+                notifyDataSetChanged();
+                holder.quantity.setText(String.valueOf(qty));
             }
         });
 
         holder.barangTambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                qty = Integer.parseInt(barang.getJumlah());
+                value = Integer.parseInt(barang.getJumlah());
                 qty++;
-                holder.quantity.setText(""+qty);
+                notifyDataSetChanged();
+                holder.quantity.setText(String.valueOf(value+qty));
             }
         });
 
