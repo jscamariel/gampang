@@ -19,6 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_BARANG_NAMA = "nama";
     public static final String COLUMN_BARANG_HARGA = "harga";
+    public static final String COLUMN_BARANG_JUMLAH = "jumlah";
 
 
     public DatabaseHelper(Context context) {
@@ -30,7 +31,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(" CREATE TABLE " + TABLE_NAME + " (" +
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_BARANG_NAMA + " TEXT NOT NULL, " +
-                COLUMN_BARANG_HARGA + " TEXT NOT NULL );"
+                COLUMN_BARANG_HARGA + "TEXT NOT NULL, " +
+                COLUMN_BARANG_JUMLAH + " TEXT NOT NULL );"
         );
 
     }
@@ -48,6 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(COLUMN_BARANG_NAMA, barang.getNama());
         values.put(COLUMN_BARANG_HARGA, barang.getHarga());
+        values.put(COLUMN_BARANG_JUMLAH, barang.getJumlah());
 
         // insert
         db.insert(TABLE_NAME,null, values);
@@ -77,6 +80,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 barang.setId(cursor.getLong(cursor.getColumnIndex(COLUMN_ID)));
                 barang.setNama(cursor.getString(cursor.getColumnIndex(COLUMN_BARANG_NAMA)));
                 barang.setHarga(cursor.getString(cursor.getColumnIndex(COLUMN_BARANG_HARGA)));
+                barang.setJumlah(cursor.getString(cursor.getColumnIndex(COLUMN_BARANG_JUMLAH)));
                 barangLinkedList.add(barang);
             } while (cursor.moveToNext());
         }
@@ -97,6 +101,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             receivedBarang.setNama(cursor.getString(cursor.getColumnIndex(COLUMN_BARANG_NAMA)));
             receivedBarang.setHarga(cursor.getString(cursor.getColumnIndex(COLUMN_BARANG_HARGA)));
+            receivedBarang.setJumlah(cursor.getString(cursor.getColumnIndex(COLUMN_BARANG_JUMLAH)));
         }
 
         return receivedBarang;
@@ -116,7 +121,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void updateBarangRecord(long barangId, Context context, Barang updatedbarang) {
         SQLiteDatabase db = this.getWritableDatabase();
         //you can use the constants above instead of typing the column names
-        db.execSQL("UPDATE  "+TABLE_NAME+" SET nama ='"+ updatedbarang.getNama() + "', harga ='" + updatedbarang.getHarga()+ "'  WHERE _id='" + barangId + "'");
+        db.execSQL("UPDATE  "+TABLE_NAME+" SET nama ='"+ updatedbarang.getNama() + "', harga ='"+ updatedbarang.getHarga() + "', jumlah ='" + updatedbarang.getJumlah()+ "'  WHERE _id='" + barangId + "'");
         Toast.makeText(context, "Berhasil diperbarui.", Toast.LENGTH_SHORT).show();
 
     }
