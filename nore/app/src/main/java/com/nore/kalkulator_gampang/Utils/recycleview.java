@@ -30,7 +30,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
     private Context mContext;
     private RecyclerView mRecyclerV;
 
-    int qty = 0;
+    int qty ;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -43,6 +43,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         public View layout;
 
         public Button barangMinus;
+        public  Button barangTambah;
         public TextView quantity;
 
         public ViewHolder(View v) {
@@ -52,6 +53,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
             barangHargaTxtV = (TextView) v.findViewById(R.id.edit_harga);
             barangMinus = (Button) v.findViewById(R.id.btn_minus);
             quantity = (TextView) v.findViewById(R.id.qty);
+            barangTambah = (Button) v.findViewById(R.id.btn_plus);
 
         }
     }
@@ -155,6 +157,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         holder.barangMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                qty = Integer.parseInt(barang.getJumlah());
                 if(qty!=0){
                     qty--;
                     holder.quantity.setText(""+qty);
@@ -162,9 +165,10 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
             }
         });
 
-        holder.barangNamaTxtV.setOnClickListener(new View.OnClickListener() {
+        holder.barangTambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                qty = Integer.parseInt(barang.getJumlah());
                 qty++;
                 holder.quantity.setText(""+qty);
             }
@@ -202,13 +206,16 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         int i;
         int totalPrice = 0;
         for(i = 0 ; i < mBarangList.size(); i++) {
-            totalPrice += Integer.parseInt(mBarangList.get(i).getHarga());
+            totalPrice += Integer.parseInt(mBarangList.get(i).getHarga()) * Integer.parseInt(mBarangList.get(i).getJumlah());
         }
         return  totalPrice;
     }
 
-    public int reset_qty(){
-        qty=0;
-        return qty;
+    public void reset_qty(){
+        int i;
+        for(i=0; i<mBarangList.size(); i++){
+            qty = Integer.parseInt(mBarangList.get(i).getJumlah());
+            qty = 0;
+        }
     }
 }

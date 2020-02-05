@@ -34,6 +34,14 @@
         android:hint="Harga barang (Update)"
         android:inputType="number" />
 
+    <EditText
+        android:id="@+id/barangJumlahUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Jumlah barang (Update)"
+        android:inputType="number" />
+
     <Button
         android:id="@+id/updateBarangButton"
         android:layout_width="match_parent"

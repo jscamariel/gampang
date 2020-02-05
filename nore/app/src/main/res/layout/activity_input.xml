@@ -26,6 +26,14 @@
         android:hint="Harga Barang, Contoh : 100~999999"
         android:inputType="number" />
 
+    <EditText
+        android:id="@+id/isi_jumlah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Jumlah Barang, Contoh : 1~999999"
+        android:inputType="number" />
+
     <Button
         android:id="@+id/btn_ok"
         android:layout_width="match_parent"
