@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -88,8 +89,7 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
             @Override
             public void onClick(View v) {
                 //openDialog();
-                Intent tambah=new Intent(MainActivity.this,InputActivity.class);
-                startActivity(tambah);
+                goToAddActivity();
             }
         });
         //jml = (TextView) findViewById(R.id.qty); ///tadi salah
@@ -210,4 +210,26 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         tv_total.setText("Total Harga:");
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.add:
+                goToAddActivity();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void goToAddActivity(){
+        Intent tambah=new Intent(MainActivity.this,InputActivity.class);
+        startActivity(tambah);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
+    }
 }
