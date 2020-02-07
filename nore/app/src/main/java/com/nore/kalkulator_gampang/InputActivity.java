@@ -31,6 +31,7 @@ public class InputActivity extends AppCompatActivity {
         btn_ok = (Button) findViewById(R.id.btn_ok);
         btn_cancel = (Button) findViewById(R.id.btn_cancel);
 
+
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,6 +81,7 @@ public class InputActivity extends AppCompatActivity {
             //error name is empty
             Toast.makeText(this, "You must enter a quantity", Toast.LENGTH_SHORT).show();
         }
+
 
         //create new person
         Barang barang = new Barang(nama, harga, jumlah);

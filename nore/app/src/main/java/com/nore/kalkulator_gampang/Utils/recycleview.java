@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.nore.kalkulator_gampang.EditActivity;
 import com.nore.kalkulator_gampang.MainActivity;
+import com.nore.kalkulator_gampang.OnItemDeletedListener;
 import com.nore.kalkulator_gampang.R;
 import com.nore.kalkulator_gampang.Model.Barang;
 
@@ -32,6 +33,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
 
     int qty =0 ;
     int value ;
+    //baru delete
+    private OnItemDeletedListener onItemDeletedListener;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -97,6 +100,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         // - replace the contents of the view with that element
         final Barang barang = mBarangList.get(position);
         holder.barangNamaTxtV.setText("" + barang.getNama());
+        holder.quantity.setText(""+barang.getJumlah());
         //holder.barangHargaTxtV.setText("Rp." + barang.getHarga());
         //baruuuuu
         Locale localeID = new Locale("in", "ID");
@@ -140,6 +144,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
                         //if (position == mBarangList.size()-1) {
                         //    grandTotal();
                         //}
+                        onItemDeletedListener.onItemDeleted();
 
                     }
                 });
@@ -219,5 +224,10 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
             qty = Integer.parseInt(mBarangList.get(i).getJumlah());
             qty = 0;
         }
+    }
+
+    //baru delete
+    public void setOnItemDeletedListener(Object object) {
+        onItemDeletedListener = (OnItemDeletedListener) object;
     }
 }

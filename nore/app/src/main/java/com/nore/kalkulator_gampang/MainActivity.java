@@ -23,7 +23,7 @@ import java.util.Locale;
 
 //import static com.nore.kalkulator_gampang.Utils.DatabaseHelper.TABLE_NAME;
 
-public class MainActivity extends AppCompatActivity  { //implements ExampleDialog.ExampleDialogListener
+public class MainActivity extends AppCompatActivity implements OnItemDeletedListener { //implements ExampleDialog.ExampleDialogListener
     //TextView tv_nama;
     //TextView tv_harga;
     Button btn_minus;
@@ -49,6 +49,10 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
 
     Button bayar;
 
+    Locale localeID = new Locale("in", "ID");
+    final NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +64,7 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         // use a linear layout manager
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
+
 
         //populate recyclerview
         populaterecyclerView(filter);
@@ -103,6 +108,7 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         //bayar.setVisibility(View.INVISIBLE);
 
         //    bayar.setVisibility(1);
+        bayar.setEnabled(false);
 
 
         //tv_nama.setOnClickListener(new View.OnClickListener() {
@@ -163,10 +169,18 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
         Intent kembali = getIntent();
 
         //baruuuuu
-        Locale localeID = new Locale("in", "ID");
-        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
-        mSubTotal = adapter.grandTotal(); //harusnya getTotal(a,b);
-        tv_total.setText("Total Harga: "+formatRupiah.format((int)mSubTotal));
+        mSubTotal = adapter.grandTotal();
+
+        if (mSubTotal != 0) {
+            tv_total.setText("Total Harga: "+formatRupiah.format((int)mSubTotal));
+            bayar.setEnabled(mSubTotal!=0);
+        }
+        else {
+            tv_total.setText("Total Harga: 0");
+        }
+        //mSubTotal = adapter.grandTotal(); //harusnya getTotal(a,b);
+
+
         //tv_total.setText("Total Harga:" + String.valueOf(mSubTotal));
 
         bayar.setOnClickListener(new View.OnClickListener() {
@@ -177,6 +191,7 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
                 startActivity(membayar);
             }
         });
+
 
     }
 
@@ -203,6 +218,8 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
     private void populaterecyclerView(String filter){
         dbHelper = new DatabaseHelper(this);
         adapter = new recycleview(dbHelper.barangList(filter), this, mRecyclerView);
+        //baru delete
+        adapter.setOnItemDeletedListener(this);
         mRecyclerView.setAdapter(adapter);
     }
 
@@ -231,5 +248,19 @@ public class MainActivity extends AppCompatActivity  { //implements ExampleDialo
     protected void onResume() {
         super.onResume();
         adapter.notifyDataSetChanged();
+    }
+
+    //baru delete
+    @Override
+    public void onItemDeleted() {
+        mSubTotal = adapter.grandTotal();
+        if (mSubTotal != 0) {
+            tv_total.setText("Total Harga: "+formatRupiah.format((int)mSubTotal));
+            bayar.setEnabled(mSubTotal!=0);
+        }
+        else {
+            tv_total.setText("Total Harga: 0");
+            bayar.setEnabled(false);
+        }
     }
 }
