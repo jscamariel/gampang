@@ -175,9 +175,12 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
             @Override
             public void onClick(View v) {
                 value = Integer.parseInt(barang.getJumlah());
-                qty++;
-                notifyDataSetChanged();
-                holder.quantity.setText(String.valueOf(value+qty));
+                value++;
+                holder.quantity.setText(String.valueOf(value));
+                for(int i=0; i<mBarangList.size(); i++){
+                    int harga = Integer.parseInt(mBarangList.get(i).getHarga());
+                    System.out.println("grand total: "+(value*harga));
+                }
             }
         });
 
