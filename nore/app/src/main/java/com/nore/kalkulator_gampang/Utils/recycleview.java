@@ -36,11 +36,13 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
     private Context mContext;
     private RecyclerView mRecyclerV;
 
+
     int qty = 0;
     int qty1 = 0;
     int qty2 = 0;
     int val1, val2, amunt1, amunt2;
     int totale = 0;
+    int hargane = 0;
 
     //baru delete
     private OnItemDeletedListener onItemDeletedListener;
@@ -191,7 +193,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
                 @Override
                 public void onClick(View v) {
                     holder.quantity.setText(""+meh_nambahi());
-
+                    Toast.makeText(mContext,"id ke : "+barang.getId(),Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -199,7 +201,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
                 @Override
                 public void onClick(View v) {
                     holder.quantity.setText(""+meh_ngurangi());
-
+                    Toast.makeText(mContext,"id ke : "+barang.getId(),Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -252,21 +254,32 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         int i;
         int totalPrice = 0;
         for(i = 0 ; i < mBarangList.size(); i++) {
-            amunt1 = Integer.parseInt(mBarangList.get(i).getHarga());
-            totalPrice += amunt1*qty1;
+            totalPrice += Integer.parseInt(mBarangList.get(i).getHarga())*qty1;
         }
         System.out.println("totale: "+totalPrice);
         return  totalPrice;
     }
 
     public int meh_nambahi(){
-        qty1++;
+        for(int i = 0; i<mBarangList.size(); i++){
+            qty1++;
+        }
+
         return qty1;
     }
 
     public int meh_ngurangi(){
-        qty1--;
+        for(int i = 0; i<mBarangList.size(); i++){
+            qty1--;
+        }
         return qty1;
+    }
+
+    public int harga_qty(){
+        for(int i=0; i<mBarangList.size(); i++){
+            hargane = qty1* Integer.parseInt(mBarangList.get(i).getHarga());
+        }
+        return hargane;
     }
 
 
