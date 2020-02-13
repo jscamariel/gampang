@@ -4,12 +4,12 @@ public class Barang {
     private long id;
     private String nama;
     private String harga;
-    private  String jumlah;
+    private int jumlah;
 
     public Barang() {
     }
 
-    public Barang(String nama, String harga, String jumlah) {
+    public Barang(String nama, String harga, int jumlah) {
         this.nama = nama;
         this.harga = harga;
         this.jumlah = jumlah;
@@ -39,11 +39,11 @@ public class Barang {
         this.harga = harga;
     }
 
-    public String getJumlah() {
+    public int getJumlah() {
         return jumlah;
     }
 
-    public void setJumlah(String jumlah) {
+    public void setJumlah(int jumlah) {
         this.jumlah = jumlah;
     }
 }

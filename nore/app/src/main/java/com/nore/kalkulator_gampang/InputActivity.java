@@ -84,7 +84,8 @@ public class InputActivity extends AppCompatActivity {
 
 
         //create new person
-        Barang barang = new Barang(nama, harga, jumlah);
+        int jml = Integer.parseInt(jumlah);
+        Barang barang = new Barang(nama, harga, jml);
         dbHelper.saveNewBarang(barang);
 
         //finally redirect back home

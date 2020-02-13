@@ -89,7 +89,8 @@ public class EditActivity extends AppCompatActivity {
         }
 
         //create updated person
-        Barang updatedBarang = new Barang(nama, harga, jumlah);
+        int jml = Integer.parseInt(jumlah);
+        Barang updatedBarang = new Barang(nama, harga, jml);
 
         //call dbhelper update
         dbHelper.updateBarangRecord(receivedBarangId, this, updatedBarang);

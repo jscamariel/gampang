@@ -134,7 +134,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         else {
             final Barang barang = mBarangList.get(position);
             holder.barangNamaTxtV.setText("" + barang.getNama());
-            holder.quantity.setText(""+qty1);
+            holder.quantity.setText(""+barang.getJumlah());
             holder.barangHargaTxtV.setText(""+barang.getHarga());
 
             //yg lama
@@ -192,7 +192,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
             holder.barangTambah.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    holder.quantity.setText(""+meh_nambahi());
+                    barang.setJumlah(barang.getJumlah()+1);
+                    holder.quantity.setText(""+barang.getJumlah());
                     Toast.makeText(mContext,"id ke : "+barang.getId(),Toast.LENGTH_SHORT).show();
                 }
             });
@@ -200,7 +201,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
             holder.barangMinus.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    holder.quantity.setText(""+meh_ngurangi());
+                    barang.setJumlah(barang.getJumlah()-1);
+                    holder.quantity.setText(""+barang.getJumlah());
                     Toast.makeText(mContext,"id ke : "+barang.getId(),Toast.LENGTH_SHORT).show();
                 }
             });
@@ -254,25 +256,25 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         int i;
         int totalPrice = 0;
         for(i = 0 ; i < mBarangList.size(); i++) {
-            totalPrice += Integer.parseInt(mBarangList.get(i).getHarga())*qty1;
+            totalPrice += Integer.parseInt(mBarangList.get(i).getHarga()) * mBarangList.get(i).getJumlah();
         }
         System.out.println("totale: "+totalPrice);
         return  totalPrice;
     }
 
-    public int meh_nambahi(){
-        for(int i = 0; i<mBarangList.size(); i++){
-            qty1++;
+    public void meh_nambahi(){
+
+        for(int i=0; i<mBarangList.size(); i++){
+            mBarangList.get(i).setJumlah(mBarangList.get(i).getJumlah()+1);
         }
 
-        return qty1;
     }
 
-    public int meh_ngurangi(){
-        for(int i = 0; i<mBarangList.size(); i++){
-            qty1--;
+    public void meh_ngurangi(){
+
+        for(int i=0; i<mBarangList.size(); i++){
+            mBarangList.get(i).setJumlah(mBarangList.get(i).getJumlah()-1);
         }
-        return qty1;
     }
 
     public int harga_qty(){
@@ -286,7 +288,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
     public void reset_qty(){
         int i;
         for(i=0; i<mBarangList.size(); i++){
-            qty = Integer.parseInt(mBarangList.get(i).getJumlah());
+            qty = mBarangList.get(i).getJumlah();
             qty = 0;
         }
     }

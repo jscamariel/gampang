@@ -32,7 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_BARANG_NAMA + " TEXT NOT NULL, " +
                 COLUMN_BARANG_HARGA + " TEXT NOT NULL, " +
-                COLUMN_BARANG_JUMLAH + " TEXT NOT NULL );"
+                COLUMN_BARANG_JUMLAH + " INTEGER NOT NULL );"
         );
 
     }
@@ -80,7 +80,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 barang.setId(cursor.getLong(cursor.getColumnIndex(COLUMN_ID)));
                 barang.setNama(cursor.getString(cursor.getColumnIndex(COLUMN_BARANG_NAMA)));
                 barang.setHarga(cursor.getString(cursor.getColumnIndex(COLUMN_BARANG_HARGA)));
-                barang.setJumlah(cursor.getString(cursor.getColumnIndex(COLUMN_BARANG_JUMLAH)));
+                barang.setJumlah(cursor.getInt(cursor.getColumnIndex(COLUMN_BARANG_JUMLAH)));
                 barangLinkedList.add(barang);
             } while (cursor.moveToNext());
         }
@@ -101,7 +101,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             receivedBarang.setNama(cursor.getString(cursor.getColumnIndex(COLUMN_BARANG_NAMA)));
             receivedBarang.setHarga(cursor.getString(cursor.getColumnIndex(COLUMN_BARANG_HARGA)));
-            receivedBarang.setJumlah(cursor.getString(cursor.getColumnIndex(COLUMN_BARANG_JUMLAH)));
+            receivedBarang.setJumlah(cursor.getInt(cursor.getColumnIndex(COLUMN_BARANG_JUMLAH)));
         }
 
         return receivedBarang;
