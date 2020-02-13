@@ -10,3 +10,7 @@ lain
 ---8. membuat tombol bayar enabled
 9. membuat qty start dari 1 semua
 10. membuat tombol input enabled
+
+buat 2 versi:
+a. input pake edit text
+b. yg original (blm ktemu carane grandtotal)

@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements OnItemDeletedList
     //int qty = 0;
     Button btn_reset;
 
-    TextView tv_total;
+    //TextView tv_total;
 
    //private ArrayList nama;
    //private ArrayList harga;
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements OnItemDeletedList
     private String filter = "";
 
     //baruuuuu
-    private int mSubTotal = 0;
+    private int mSubTotal =0;
     Context context ;
 
     Button bayar;
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements OnItemDeletedList
         //jml = (TextView) findViewById(R.id.qty); ///tadi salah
         //jml.setText(""+qty);
         btn_reset=(Button) findViewById(R.id.btn_reset);
-        tv_total = (TextView) findViewById(R.id.total);
+        //tv_total = (TextView) findViewById(R.id.total);
 
         bayar = (Button) findViewById(R.id.bayar);
 
@@ -172,13 +172,14 @@ public class MainActivity extends AppCompatActivity implements OnItemDeletedList
         mSubTotal = adapter.grandTotal();
 
         if (mSubTotal != 0) {
-            tv_total.setText("Total Harga: "+formatRupiah.format((int)mSubTotal));
+            //tv_total.setText("Total Harga: "+formatRupiah.format((int)mSubTotal));
             bayar.setEnabled(mSubTotal!=0);
         }
         else {
-            tv_total.setText("Total Harga: 0");
+            //tv_total.setText("Total Harga: 0");
         }
         //mSubTotal = adapter.grandTotal(); //harusnya getTotal(a,b);
+
 
 
         //tv_total.setText("Total Harga:" + String.valueOf(mSubTotal));
@@ -224,7 +225,7 @@ public class MainActivity extends AppCompatActivity implements OnItemDeletedList
     }
 
     public void reset(){
-        tv_total.setText("Total Harga:");
+        //tv_total.setText("Total Harga:");
     }
 
     @Override
@@ -255,11 +256,11 @@ public class MainActivity extends AppCompatActivity implements OnItemDeletedList
     public void onItemDeleted() {
         mSubTotal = adapter.grandTotal();
         if (mSubTotal != 0) {
-            tv_total.setText("Total Harga: "+formatRupiah.format((int)mSubTotal));
+            //tv_total.setText("Total Harga: "+formatRupiah.format((int)mSubTotal));
             bayar.setEnabled(mSubTotal!=0);
         }
         else {
-            tv_total.setText("Total Harga: 0");
+            //tv_total.setText("Total Harga: 0");
             bayar.setEnabled(false);
         }
     }

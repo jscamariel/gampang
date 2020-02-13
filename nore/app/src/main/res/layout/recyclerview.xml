@@ -29,7 +29,8 @@
             android:background="#0CB10C"
             android:text="-"
             android:textColor="#FFFFFF"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:tag="mengurang"/>
 
         <Button
             android:id="@+id/btn_plus"
@@ -39,7 +40,8 @@
             android:background="#18A018"
             android:text="+"
             android:textColor="#FFFFFF"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:tag="menambah" />
 
                 <TextView
                     android:id="@+id/qty"
@@ -67,4 +69,6 @@
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
         </LinearLayout>
+
+
 </LinearLayout>
