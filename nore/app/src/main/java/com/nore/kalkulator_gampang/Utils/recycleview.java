@@ -4,11 +4,18 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.session.MediaSessionManager;
+<<<<<<< HEAD
+=======
+import android.net.sip.SipAudioCall;
+import android.net.sip.SipSession;
+import android.util.Log;
+>>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -16,11 +23,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.nore.kalkulator_gampang.EditActivity;
 import com.nore.kalkulator_gampang.MainActivity;
+<<<<<<< HEAD
+=======
+import com.nore.kalkulator_gampang.OnItemDeletedListener;
+>>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
 import com.nore.kalkulator_gampang.R;
 import com.nore.kalkulator_gampang.Model.Barang;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+<<<<<<< HEAD
+=======
+import java.util.HashMap;
+>>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
 import java.util.List;
 import java.util.Locale;
 
@@ -30,8 +45,21 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
     private Context mContext;
     private RecyclerView mRecyclerV;
 
+<<<<<<< HEAD
     int qty =0 ;
     int value ;
+=======
+
+    int qty = 0;
+    int qty1 = 0;
+    int qty2 = 0;
+    int val1, val2, amunt1, amunt2;
+    int totale = 0;
+    int hargane = 0;
+
+    //baru delete
+    private OnItemDeletedListener onItemDeletedListener;
+>>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -40,10 +68,13 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         // each data item is just a string in this case
         public Button barangNamaTxtV;
         public TextView barangHargaTxtV;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
         public View layout;
-
         public Button barangMinus;
+<<<<<<< HEAD
         public Button barangTambah;
         public TextView quantity;
 
@@ -56,7 +87,27 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
             quantity = (TextView) v.findViewById(R.id.qty);
             barangTambah = (Button) v.findViewById(R.id.btn_plus);
 
+=======
+        public  Button barangTambah;
+        public TextView quantity;
+        public  TextView totalHargaTxtV;
+        public ViewHolder(View v) {
+                super(v);
+                layout = v;
+                barangNamaTxtV = (Button) v.findViewById(R.id.edit_nama);
+                barangHargaTxtV = (TextView) v.findViewById(R.id.edit_harga);
+                barangMinus = (Button) v.findViewById(R.id.btn_minus);
+                quantity = (TextView) v.findViewById(R.id.qty);
+                barangTambah = (Button) v.findViewById(R.id.btn_plus);
+                totalHargaTxtV = (TextView) v.findViewById(R.id.total);
+>>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
         }
+    }
+
+    //hai
+    @Override
+    public int getItemViewType(int position) {
+        return (position == mBarangList.size()) ? R.layout.activity_tampilintotal : R.layout.recyclerview;
     }
 
     public void add(int position, Barang barang) {
@@ -83,27 +134,134 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         // create a new view
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());
-        View v =
-                inflater.inflate(R.layout.recyclerview, parent, false);
+        View v ; // = inflater.inflate(R.layout.recyclerview, parent, false);
+        //hai
+        if(viewType == R.layout.recyclerview){
+            v = inflater.inflate(R.layout.recyclerview, parent, false);
+        }
+
+        else {
+            v = inflater.inflate(R.layout.activity_tampilintotal, parent, false);
+        }
+
         // set the view's size, margins, paddings and layout parameters
         ViewHolder vh = new ViewHolder(v);
         return vh;
+
     }
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
+
+        //hai
+        if(position == mBarangList.size()) {
+            //textview
+            holder.totalHargaTxtV.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    holder.totalHargaTxtV.setText("Total Harga : "+grandTotal());
+                }
+            });
+        }
+        else {
+            final Barang barang = mBarangList.get(position);
+            holder.barangNamaTxtV.setText("" + barang.getNama());
+            holder.quantity.setText(""+barang.getJumlah());
+            holder.barangHargaTxtV.setText(""+barang.getHarga());
+
+            //yg lama
+            holder.barangNamaTxtV.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                    builder.setTitle("Silahkan pilih:");
+                    builder.setMessage("Perbarui atau hapus data?");
+                    builder.setPositiveButton("Perbarui", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            //go to update activity
+                            goToUpdateActivity(barang.getId());
+
+                        }
+                    });
+                    builder.setNeutralButton("Hapus", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            DatabaseHelper dbHelper = new DatabaseHelper(mContext);
+
+
+                            dbHelper.deleteBarangRecord(barang.getId(), mContext);
+
+                            mBarangList.remove(position);
+                            mRecyclerV.removeViewAt(position);
+                            notifyItemRemoved(position);
+                            notifyItemRangeChanged(position, mBarangList.size());
+                            notifyDataSetChanged();
+                            //if(mContext instanceof MainActivity){
+                            //    grandTotal();
+                            //}
+
+                            //baruuuuu
+                            //if (position == mBarangList.size()-1) {
+                            //    grandTotal();
+                            //}
+                            onItemDeletedListener.onItemDeleted();
+
+                        }
+                    });
+                    builder.setNegativeButton("Batal", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.create().show();
+                    return true;
+                }
+            });
+
+            holder.barangTambah.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    barang.setJumlah(barang.getJumlah()+1);
+                    holder.quantity.setText(""+barang.getJumlah());
+                    Toast.makeText(mContext,"id ke : "+barang.getId(),Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            holder.barangMinus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    barang.setJumlah(barang.getJumlah()-1);
+                    holder.quantity.setText(""+barang.getJumlah());
+                    Toast.makeText(mContext,"id ke : "+barang.getId(),Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
+<<<<<<< HEAD
         final Barang barang = mBarangList.get(position);
         holder.barangNamaTxtV.setText("" + barang.getNama());
+=======
+
+
+        //Compare size and add button at buttom of view,ie arraylist size
+
+
+        //holder.quantity.setText(""+barang.getJumlah());
+>>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
         //holder.barangHargaTxtV.setText("Rp." + barang.getHarga());
         //baruuuuu
         Locale localeID = new Locale("in", "ID");
         NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
-        holder.barangHargaTxtV.setText(formatRupiah.format((int)Integer.parseInt(barang.getHarga())));
+        //holder.barangHargaTxtV.setText(formatRupiah.format((int)Integer.parseInt(barang.getHarga())));
 
         //listen on long click
+<<<<<<< HEAD
         holder.barangNamaTxtV.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -175,10 +333,11 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
                 holder.quantity.setText(String.valueOf(value+qty));
             }
         });
+=======
+>>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
 
         //baruuu
         //getTotal(Integer.parseInt(barang.getHarga()),qty);
-
     }
 
     private void goToUpdateActivity(long barangId){
@@ -190,7 +349,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return mBarangList.size();
+        //hai ndk pake +1
+        return mBarangList.size()+1;
     }
 
 
@@ -208,16 +368,60 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         int i;
         int totalPrice = 0;
         for(i = 0 ; i < mBarangList.size(); i++) {
+<<<<<<< HEAD
             totalPrice += Integer.parseInt(mBarangList.get(i).getHarga()) * Integer.parseInt(mBarangList.get(i).getJumlah());
+=======
+            totalPrice += Integer.parseInt(mBarangList.get(i).getHarga()) * mBarangList.get(i).getJumlah();
+>>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
         }
+        System.out.println("totale: "+totalPrice);
         return  totalPrice;
     }
 
+<<<<<<< HEAD
     public void reset_qty(){
         int i;
         for(i=0; i<mBarangList.size(); i++){
             qty = Integer.parseInt(mBarangList.get(i).getJumlah());
             qty = 0;
         }
+=======
+    public void meh_nambahi(){
+
+        for(int i=0; i<mBarangList.size(); i++){
+            mBarangList.get(i).setJumlah(mBarangList.get(i).getJumlah()+1);
+        }
+
     }
+
+    public void meh_ngurangi(){
+
+        for(int i=0; i<mBarangList.size(); i++){
+            mBarangList.get(i).setJumlah(mBarangList.get(i).getJumlah()-1);
+        }
+    }
+
+    public int harga_qty(){
+        for(int i=0; i<mBarangList.size(); i++){
+            hargane = qty1* Integer.parseInt(mBarangList.get(i).getHarga());
+        }
+        return hargane;
+    }
+
+
+    public void reset_qty(){
+        int i;
+        for(i=0; i<mBarangList.size(); i++){
+            qty = mBarangList.get(i).getJumlah();
+            qty = 0;
+        }
+    }
+
+    //baru delete
+    public void setOnItemDeletedListener(Object object) {
+        onItemDeletedListener = (OnItemDeletedListener) object;
+>>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
+    }
+
+
 }

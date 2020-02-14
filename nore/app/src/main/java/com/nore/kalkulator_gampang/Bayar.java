@@ -13,7 +13,7 @@ import android.widget.TextView;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class Bayar extends AppCompatActivity {
+public class Bayar extends AppCompatActivity implements OnKembalianListener{
     TextView totalbayar;
     Button seratus;
     Button duaratus;
@@ -74,6 +74,8 @@ public class Bayar extends AppCompatActivity {
 
     Locale localeID = new Locale("in", "ID");
     NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+    //baru
+    private OnKembalianListener onKembalianListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,6 +131,7 @@ public class Bayar extends AppCompatActivity {
                 //clicked1 = true;
                 uang1 = 100*qty1;
                 //change1 = uang1 - pricetotal;
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -141,6 +144,7 @@ public class Bayar extends AppCompatActivity {
                     uang1 = 100*qty1;
                     //change1 = uang1 - pricetotal;
                 }
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -151,6 +155,7 @@ public class Bayar extends AppCompatActivity {
                 jml2.setText(""+qty2);
                 uang2 = 200*qty2;
                 //change2 = uang2 - pricetotal;
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -163,6 +168,7 @@ public class Bayar extends AppCompatActivity {
                     uang2 = 200*qty2;
                     //change2 = uang2 - pricetotal;
                 }
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -175,6 +181,7 @@ public class Bayar extends AppCompatActivity {
                 qty3++;
                 jml3.setText(""+qty3);
                 uang3 = 500*qty3;
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -186,6 +193,7 @@ public class Bayar extends AppCompatActivity {
                     jml3.setText(""+qty3);
                     uang3 = 500*qty3;
                 }
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -195,6 +203,7 @@ public class Bayar extends AppCompatActivity {
                 qty4++;
                 jml4.setText(""+qty4);
                 uang4 = 1000*qty4;
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -206,6 +215,7 @@ public class Bayar extends AppCompatActivity {
                     jml4.setText(""+qty4);
                     uang4 = 1000*qty4;
                 }
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -215,6 +225,7 @@ public class Bayar extends AppCompatActivity {
                 qty5++;
                 jml5.setText(""+qty5);
                 uang5 = 2000*qty5;
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -226,6 +237,7 @@ public class Bayar extends AppCompatActivity {
                     jml5.setText(""+qty5);
                     uang5 = 2000*qty5;
                 }
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -235,6 +247,7 @@ public class Bayar extends AppCompatActivity {
                 qty6++;
                 jml6.setText(""+qty6);
                 uang6 = 5000*qty6;
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -246,6 +259,7 @@ public class Bayar extends AppCompatActivity {
                     jml6.setText(""+qty6);
                     uang6 = 5000*qty6;
                 }
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -255,6 +269,7 @@ public class Bayar extends AppCompatActivity {
                 qty7++;
                 jml7.setText(""+qty7);
                 uang7 = 10000*qty7;
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -266,6 +281,7 @@ public class Bayar extends AppCompatActivity {
                     jml7.setText(""+qty7);
                     uang7 = 10000*qty7;
                 }
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -275,6 +291,7 @@ public class Bayar extends AppCompatActivity {
                 qty8++;
                 jml8.setText(""+qty8);
                 uang8 = 20000*qty8;
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -286,6 +303,7 @@ public class Bayar extends AppCompatActivity {
                     jml8.setText(""+qty8);
                     uang8 = 20000*qty8;
                 }
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -295,6 +313,7 @@ public class Bayar extends AppCompatActivity {
                 qty9++;
                 jml9.setText(""+qty9);
                 uang9 = 50000*qty9;
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -306,6 +325,7 @@ public class Bayar extends AppCompatActivity {
                     jml9.setText(""+qty9);
                     uang9 = 50000*qty9;
                 }
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -315,6 +335,7 @@ public class Bayar extends AppCompatActivity {
                 qty10++;
                 jml10.setText(""+qty10);
                 uang10 = 100000*qty10;
+                onKembalianListener.onKembalian();
             }
         });
 
@@ -326,12 +347,11 @@ public class Bayar extends AppCompatActivity {
                     jml10.setText(""+qty10);
                     uang10 = 100000*qty10;
                 }
+                onKembalianListener.onKembalian();
             }
         });
-
-        btn_kembalian.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                //baruu
+                setOnKembalianListener(this);
                 change = (uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal;
                 if(uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10 < pricetotal){
                     kembalian.setText("Kurang "+formatRupiah.format((int)change));
@@ -339,7 +359,21 @@ public class Bayar extends AppCompatActivity {
                     //change = (uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal;
                     kembalian.setText(formatRupiah.format((int)change));
                 }
-            }
-        });
+
+    }
+
+    public void setOnKembalianListener(Object object) {
+        onKembalianListener = (OnKembalianListener) object;
+    }
+
+    @Override
+    public void onKembalian() {
+        change = (uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal;
+        if(uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10 < pricetotal){
+            kembalian.setText("Kurang "+formatRupiah.format((int)change));
+        }else{
+            //change = (uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal;
+            kembalian.setText(formatRupiah.format((int)change));
+        }
     }
 }

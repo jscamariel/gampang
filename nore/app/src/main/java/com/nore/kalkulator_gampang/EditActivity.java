@@ -89,7 +89,12 @@ public class EditActivity extends AppCompatActivity {
         }
 
         //create updated person
+<<<<<<< HEAD
         Barang updatedBarang = new Barang(nama, harga, jumlah);
+=======
+        int jml = Integer.parseInt(jumlah);
+        Barang updatedBarang = new Barang(nama, harga, jml);
+>>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
 
         //call dbhelper update
         dbHelper.updateBarangRecord(receivedBarangId, this, updatedBarang);

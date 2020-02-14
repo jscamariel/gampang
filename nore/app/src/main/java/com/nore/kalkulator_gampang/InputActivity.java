@@ -31,6 +31,7 @@ public class InputActivity extends AppCompatActivity {
         btn_ok = (Button) findViewById(R.id.btn_ok);
         btn_cancel = (Button) findViewById(R.id.btn_cancel);
 
+
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,8 +82,14 @@ public class InputActivity extends AppCompatActivity {
             Toast.makeText(this, "You must enter a quantity", Toast.LENGTH_SHORT).show();
         }
 
+
         //create new person
+<<<<<<< HEAD
         Barang barang = new Barang(nama, harga, jumlah);
+=======
+        int jml = Integer.parseInt(jumlah);
+        Barang barang = new Barang(nama, harga, jml);
+>>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
         dbHelper.saveNewBarang(barang);
 
         //finally redirect back home
