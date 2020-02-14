@@ -28,9 +28,10 @@ public class MainActivity extends AppCompatActivity implements OnItemDeletedList
     //TextView tv_harga;
     Button btn_minus;
     Button btn_add;
+    Button btn_reset;
     //TextView jml;
     //int qty = 0;
-    Button btn_reset;
+
 
     //TextView tv_total;
 
@@ -97,18 +98,18 @@ public class MainActivity extends AppCompatActivity implements OnItemDeletedList
                 goToAddActivity();
             }
         });
+        btn_reset = (Button) findViewById(R.id.btn_reset);
         //jml = (TextView) findViewById(R.id.qty); ///tadi salah
         //jml.setText(""+qty);
-        btn_reset=(Button) findViewById(R.id.btn_reset);
         //tv_total = (TextView) findViewById(R.id.total);
 
-        bayar = (Button) findViewById(R.id.bayar);
+
 
         //baruuuuu
         //bayar.setVisibility(View.INVISIBLE);
 
         //    bayar.setVisibility(1);
-        bayar.setEnabled(false);
+        //bayar.setEnabled(false);
 
 
         //tv_nama.setOnClickListener(new View.OnClickListener() {
@@ -157,41 +158,27 @@ public class MainActivity extends AppCompatActivity implements OnItemDeletedList
 
         //boolean isInserted = BantuDb.insertData(tv_nama.getText().toString(),tv_harga.getText().toString());
 
-        btn_reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                reset();
-                adapter.reset_qty();
-                //Cursor res = BantuDB.getData(xnim.getText().toString());
-            }
-        });
+
 
         Intent kembali = getIntent();
 
         //baruuuuu
-        mSubTotal = adapter.grandTotal();
+        //mSubTotal = adapter.grandTotal();
 
-        if (mSubTotal != 0) {
+        //if (mSubTotal != 0) {
             //tv_total.setText("Total Harga: "+formatRupiah.format((int)mSubTotal));
-            bayar.setEnabled(mSubTotal!=0);
-        }
-        else {
+        //    bayar.setEnabled(mSubTotal!=0);
+        //}
+        //else {
             //tv_total.setText("Total Harga: 0");
-        }
+        //}
         //mSubTotal = adapter.grandTotal(); //harusnya getTotal(a,b);
 
 
 
         //tv_total.setText("Total Harga:" + String.valueOf(mSubTotal));
 
-        bayar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent membayar = new Intent(MainActivity.this,Bayar.class);
-                membayar.putExtra("total",mSubTotal);
-                startActivity(membayar);
-            }
-        });
+
 
 
     }
@@ -224,9 +211,7 @@ public class MainActivity extends AppCompatActivity implements OnItemDeletedList
         mRecyclerView.setAdapter(adapter);
     }
 
-    public void reset(){
-        //tv_total.setText("Total Harga:");
-    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -250,8 +235,6 @@ public class MainActivity extends AppCompatActivity implements OnItemDeletedList
         super.onResume();
         adapter.notifyDataSetChanged();
     }
-<<<<<<< HEAD
-=======
 
     //baru delete
     @Override
@@ -259,12 +242,11 @@ public class MainActivity extends AppCompatActivity implements OnItemDeletedList
         mSubTotal = adapter.grandTotal();
         if (mSubTotal != 0) {
             //tv_total.setText("Total Harga: "+formatRupiah.format((int)mSubTotal));
-            bayar.setEnabled(mSubTotal!=0);
+            //bayar.setEnabled(mSubTotal!=0);
         }
         else {
             //tv_total.setText("Total Harga: 0");
-            bayar.setEnabled(false);
+            //bayar.setEnabled(false);
         }
     }
->>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
 }

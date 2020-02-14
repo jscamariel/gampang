@@ -17,4 +17,24 @@ android:background="#0DD116">
     android:textColor="#ffffff"
     android:textSize="30dp" />
 
+    <Button
+        android:id="@+id/bayar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:background="#18A018"
+        android:text="Bayar"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:background="#108610"
+        android:text="Bersihkan"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp" />
+
 </LinearLayout>

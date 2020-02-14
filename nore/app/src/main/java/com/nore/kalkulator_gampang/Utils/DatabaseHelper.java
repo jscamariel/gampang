@@ -32,11 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_BARANG_NAMA + " TEXT NOT NULL, " +
                 COLUMN_BARANG_HARGA + " TEXT NOT NULL, " +
-<<<<<<< HEAD
-                COLUMN_BARANG_JUMLAH + " TEXT NOT NULL );"
-=======
                 COLUMN_BARANG_JUMLAH + " INTEGER NOT NULL );"
->>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
         );
 
     }

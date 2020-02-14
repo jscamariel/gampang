@@ -43,16 +43,6 @@
             android:textSize="20dp"
             android:tag="menambah" />
 
-<<<<<<< HEAD
-        <TextView
-            android:id="@+id/qty"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_weight="1"
-            android:textColor="#FFFFFF"
-            android:textSize="25dp" />
-=======
                 <TextView
                     android:id="@+id/qty"
                     android:layout_width="50dp"
@@ -61,7 +51,6 @@
                     android:layout_weight="1"
                     android:textColor="#FFFFFF"
                     android:textSize="25dp" />
->>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
 
         <TextView
             android:layout_width="wrap_content"
@@ -80,9 +69,6 @@
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
         </LinearLayout>
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
 </LinearLayout>

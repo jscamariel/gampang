@@ -4,11 +4,7 @@ public class Barang {
     private long id;
     private String nama;
     private String harga;
-<<<<<<< HEAD
-    private  String jumlah;
-=======
     private int jumlah;
->>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
 
     public Barang() {
     }
@@ -43,19 +39,11 @@ public class Barang {
         this.harga = harga;
     }
 
-<<<<<<< HEAD
-    public String getJumlah() {
-        return jumlah;
-    }
-
-    public void setJumlah(String jumlah) {
-=======
     public int getJumlah() {
         return jumlah;
     }
 
     public void setJumlah(int jumlah) {
->>>>>>> 3af55a4608c5b1a5596d938e6290d7e8400cfa5d
         this.jumlah = jumlah;
     }
 }

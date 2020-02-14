@@ -6,69 +6,43 @@
     android:layout_height="match_parent"
     android:background="#0DD116"
     tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-        <Button
-            android:id="@+id/add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:background="#108610"
-            android:text="+"
-            android:textColor="#fff"
-            android:textSize="30dp" />
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/daftarBarang"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-
-
-        <Button
-            android:id="@+id/btn_reset"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="left"
-            android:background="#108610"
-            android:text="Bersihkan"
-            android:textColor="#FFFFFF"
-            android:textSize="25dp" />
-
-        <Button
-            android:id="@+id/bayar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="right"
-            android:background="#18A018"
-            android:text="Bayar"
-            android:textColor="#FFFFFF"
-            android:textSize="25dp" />
-        </LinearLayout>
-
-            <TextView
-                android:id="@+id/powered"
+            <Button
+                android:id="@+id/add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="© 2020 , Powered by Nore.web.id"
-                android:layout_gravity="center"
-                android:textColor="#ffffff"
-                android:textSize="20dp" />
-        </LinearLayout>
+                android:layout_gravity="right"
+                android:background="#108610"
+                android:text="+"
+                android:textColor="#fff"
+                android:textSize="30dp" />
+    </LinearLayout>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/daftarBarang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
 </ScrollView>
