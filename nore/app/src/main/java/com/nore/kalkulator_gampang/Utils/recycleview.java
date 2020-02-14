@@ -18,9 +18,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.nore.kalkulator_gampang.Bayar;
 import com.nore.kalkulator_gampang.EditActivity;
 import com.nore.kalkulator_gampang.MainActivity;
 import com.nore.kalkulator_gampang.OnItemDeletedListener;
+import com.nore.kalkulator_gampang.OnUpdateTotalListener;
 import com.nore.kalkulator_gampang.R;
 import com.nore.kalkulator_gampang.Model.Barang;
 
@@ -31,13 +33,13 @@ import java.util.List;
 import java.util.Locale;
 
 
-public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
+public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
     private List<Barang> mBarangList;
     private Context mContext;
     private RecyclerView mRecyclerV;
 
-
-    int qty = 0;
+    int totalkosong;
+    int qty;
     int qty1 = 0;
     int qty2 = 0;
     int val1, val2, amunt1, amunt2;
@@ -46,6 +48,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
 
     //baru delete
     private OnItemDeletedListener onItemDeletedListener;
+
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -59,6 +62,9 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         public  Button barangTambah;
         public TextView quantity;
         public  TextView totalHargaTxtV;
+        public Button tombolbayar;
+        public Button bersihkan ;
+
         public ViewHolder(View v) {
                 super(v);
                 layout = v;
@@ -68,6 +74,8 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
                 quantity = (TextView) v.findViewById(R.id.qty);
                 barangTambah = (Button) v.findViewById(R.id.btn_plus);
                 totalHargaTxtV = (TextView) v.findViewById(R.id.total);
+                tombolbayar = (Button) v.findViewById(R.id.bayar);
+                bersihkan = (Button) v.findViewById(R.id.btn_reset);
         }
     }
 
@@ -120,22 +128,55 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-
         //hai
         if(position == mBarangList.size()) {
             //textview
+            Locale localeID = new Locale("in", "ID");
+            final NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
             holder.totalHargaTxtV.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    holder.totalHargaTxtV.setText("Total Harga : "+grandTotal());
+                    holder.totalHargaTxtV.setText("Total Harga : "+formatRupiah.format((int)grandTotal()));
                 }
             });
+            holder.tombolbayar.setEnabled(false);
+            if(grandTotal()!=0){
+                holder.tombolbayar.setEnabled(grandTotal()!=0);
+            }
+            holder.tombolbayar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent membayar = new Intent(mContext, Bayar.class);
+                    membayar.putExtra("total",grandTotal());
+                    mContext.startActivity(membayar);
+                }
+            });
+
+            holder.bersihkan.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    totalkosong = grandTotal();
+                    for(int i=0; i<mBarangList.size(); i++){
+                        totalkosong=0;
+                        //qty = mBarangList.get(i).getJumlah();
+                        qty = 0;
+                        mBarangList.get(i).setJumlah(qty);
+                    }
+                    holder.totalHargaTxtV.setText("Total Harga : "+totalkosong);
+                    //holder.quantity.setText(""+qty);
+                }
+            });
+
         }
         else {
+            // disini
+            Locale localeID = new Locale("in", "ID");
+            NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
             final Barang barang = mBarangList.get(position);
             holder.barangNamaTxtV.setText("" + barang.getNama());
             holder.quantity.setText(""+barang.getJumlah());
-            holder.barangHargaTxtV.setText(""+barang.getHarga());
+            holder.barangHargaTxtV.setText(""+formatRupiah.format((int)Integer.parseInt(barang.getHarga())));
 
             //yg lama
             holder.barangNamaTxtV.setOnLongClickListener(new View.OnLongClickListener() {
@@ -194,7 +235,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
                 public void onClick(View v) {
                     barang.setJumlah(barang.getJumlah()+1);
                     holder.quantity.setText(""+barang.getJumlah());
-                    Toast.makeText(mContext,"id ke : "+barang.getId(),Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(mContext,"id ke : "+barang.getId(),Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -203,7 +244,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
                 public void onClick(View v) {
                     barang.setJumlah(barang.getJumlah()-1);
                     holder.quantity.setText(""+barang.getJumlah());
-                    Toast.makeText(mContext,"id ke : "+barang.getId(),Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(mContext,"id ke : "+barang.getId(),Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -218,8 +259,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         //holder.quantity.setText(""+barang.getJumlah());
         //holder.barangHargaTxtV.setText("Rp." + barang.getHarga());
         //baruuuuu
-        Locale localeID = new Locale("in", "ID");
-        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+
         //holder.barangHargaTxtV.setText(formatRupiah.format((int)Integer.parseInt(barang.getHarga())));
 
         //listen on long click
@@ -242,15 +282,6 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
     }
 
 
-    // baruuu
-    public int getTotal(int amount, int value){
-        int quantity = value;
-        int totalamount;
-        int amountall = amount;
-        totalamount = value * amount;
-        grandTotal();
-        return totalamount;
-    }
 
     public int grandTotal(){
         int i;
@@ -258,7 +289,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         for(i = 0 ; i < mBarangList.size(); i++) {
             totalPrice += Integer.parseInt(mBarangList.get(i).getHarga()) * mBarangList.get(i).getJumlah();
         }
-        System.out.println("totale: "+totalPrice);
+
         return  totalPrice;
     }
 
@@ -284,7 +315,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
         return hargane;
     }
 
-
+    /*
     public void reset_qty(){
         int i;
         for(i=0; i<mBarangList.size(); i++){
@@ -292,6 +323,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder>{
             qty = 0;
         }
     }
+    */
 
     //baru delete
     public void setOnItemDeletedListener(Object object) {

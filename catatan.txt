@@ -8,8 +8,9 @@ lain
 6. membuat tombol kembali, yang tidak numpuk
 ---7. membuat harga ada titiknya
 ---8. membuat tombol bayar enabled
-9. membuat qty start dari 1 semua
+---9. membuat qty start dari 1 semua
 10. membuat tombol input enabled
+11. buat popup delete confirm
 
 buat 2 versi:
 a. input pake edit text
