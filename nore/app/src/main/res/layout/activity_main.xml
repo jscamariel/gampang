@@ -44,5 +44,13 @@
 
 
         </LinearLayout>
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Copyright CV. Nore Inovasi 2020"
+            android:textColor="#ffffff"
+            android:textSize="15dp" />
     </LinearLayout>
 </ScrollView>

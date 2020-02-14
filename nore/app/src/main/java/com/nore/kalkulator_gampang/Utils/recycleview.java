@@ -167,7 +167,6 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
                     //holder.quantity.setText(""+qty);
                 }
             });
-
         }
         else {
             // disini

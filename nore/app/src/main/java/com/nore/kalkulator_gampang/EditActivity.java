@@ -48,7 +48,7 @@ public class EditActivity extends AppCompatActivity {
         //set field to this user data
         barangNamaUpdate.setText(queriedBarang.getNama());
         barangHargaUpdate.setText(queriedBarang.getHarga());
-        barangJumlahUpdate.setText(queriedBarang.getJumlah());
+        barangJumlahUpdate.setText(String.valueOf(queriedBarang.getJumlah()));
 
 
         //listen to add button click to update
