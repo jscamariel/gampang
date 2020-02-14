@@ -241,8 +241,12 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
             holder.barangMinus.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    barang.setJumlah(barang.getJumlah()-1);
-                    holder.quantity.setText(""+barang.getJumlah());
+                    if(barang.getJumlah()!=0){
+                        barang.setJumlah(barang.getJumlah()-1);
+                        holder.quantity.setText(""+barang.getJumlah());
+                    }
+
+
                     //Toast.makeText(mContext,"id ke : "+barang.getId(),Toast.LENGTH_SHORT).show();
                 }
             });
