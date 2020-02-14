@@ -27,12 +27,12 @@
         android:inputType="number" />
 
     <EditText
+        android:id="@+id/isi_jumlah"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:id="@+id/isi_jumlah"
-        android:hint="Jumlah Barang, Contoh : 1~1000"
-        android:inputType="number"/>
+        android:hint="Jumlah Barang, Contoh : 1~999999"
+        android:inputType="number" />
 
     <Button
         android:id="@+id/btn_ok"

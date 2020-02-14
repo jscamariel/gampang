@@ -30,7 +30,7 @@ public class EditActivity extends AppCompatActivity {
         //init
         barangNamaUpdate = (EditText)findViewById(R.id.barangNamaUpdate);
         barangHargaUpdate = (EditText)findViewById(R.id.barangHargaUpdate);
-        barangJumlahUpdate = (EditText) findViewById(R.id.barangJumlahUpdate);
+        barangJumlahUpdate = (EditText)findViewById(R.id.barangJumlahUpdate);
         mUpdateBtn = (Button)findViewById(R.id.updateBarangButton);
         btn_cancel = (Button) findViewById(R.id.btn_cancel);
 
@@ -84,11 +84,12 @@ public class EditActivity extends AppCompatActivity {
         }
 
         if(jumlah.isEmpty()){
-            Toast.makeText(this,"You must enter a quantity", Toast.LENGTH_SHORT).show();
+            //error name is empty
+            Toast.makeText(this, "You must enter a quantity", Toast.LENGTH_SHORT).show();
         }
 
         //create updated person
-        Barang updatedBarang = new Barang(nama,harga,jumlah);
+        Barang updatedBarang = new Barang(nama, harga, jumlah);
 
         //call dbhelper update
         dbHelper.updateBarangRecord(receivedBarangId, this, updatedBarang);

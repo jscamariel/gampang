@@ -25,6 +25,16 @@ public class Bayar extends AppCompatActivity {
     Button duapuluhribu;
     Button limapuluhribu;
     Button seratusribu;
+    Button kurang1;
+    Button kurang2;
+    Button kurang3;
+    Button kurang4;
+    Button kurang5;
+    Button kurang6;
+    Button kurang7;
+    Button kurang8;
+    Button kurang9;
+    Button kurang10;
     TextView jml1,jml2,jml3,jml4,jml5,jml6,jml7,jml8,jml9,jml10;
     int qty1 = 0;
     int qty2 = 0;
@@ -81,6 +91,16 @@ public class Bayar extends AppCompatActivity {
         duapuluhribu = (Button) findViewById(R.id.duapuluhribu);
         limapuluhribu = (Button) findViewById(R.id.limapuluhribu);
         seratusribu = (Button) findViewById(R.id.seratusribu);
+        kurang1 = (Button) findViewById(R.id.min1);
+        kurang2 = (Button) findViewById(R.id.min2);
+        kurang3 = (Button) findViewById(R.id.min3);
+        kurang4 = (Button) findViewById(R.id.min4);
+        kurang5 = (Button) findViewById(R.id.min5);
+        kurang6 = (Button) findViewById(R.id.min6);
+        kurang7 = (Button) findViewById(R.id.min7);
+        kurang8 = (Button) findViewById(R.id.min8);
+        kurang9 = (Button) findViewById(R.id.min9);
+        kurang10 = (Button) findViewById(R.id.min10);
         jml1=(TextView) findViewById(R.id.jml1);
         jml2=(TextView) findViewById(R.id.jml2);
         jml3=(TextView) findViewById(R.id.jml3);
@@ -112,7 +132,7 @@ public class Bayar extends AppCompatActivity {
             }
         });
 
-        jml1.setOnClickListener(new View.OnClickListener() {
+        kurang1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(qty1!=0){
@@ -134,7 +154,7 @@ public class Bayar extends AppCompatActivity {
             }
         });
 
-        jml2.setOnClickListener(new View.OnClickListener() {
+        kurang2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(qty2!=0){
@@ -158,7 +178,7 @@ public class Bayar extends AppCompatActivity {
             }
         });
 
-        jml3.setOnClickListener(new View.OnClickListener() {
+        kurang3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(qty3!=0){
@@ -178,7 +198,7 @@ public class Bayar extends AppCompatActivity {
             }
         });
 
-        jml4.setOnClickListener(new View.OnClickListener() {
+        kurang4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(qty4!=0){
@@ -198,7 +218,7 @@ public class Bayar extends AppCompatActivity {
             }
         });
 
-        jml5.setOnClickListener(new View.OnClickListener() {
+        kurang5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(qty5!=0){
@@ -218,7 +238,7 @@ public class Bayar extends AppCompatActivity {
             }
         });
 
-        jml6.setOnClickListener(new View.OnClickListener() {
+        kurang6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(qty6!=0){
@@ -238,7 +258,7 @@ public class Bayar extends AppCompatActivity {
             }
         });
 
-        jml7.setOnClickListener(new View.OnClickListener() {
+        kurang7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(qty7!=0){
@@ -258,7 +278,7 @@ public class Bayar extends AppCompatActivity {
             }
         });
 
-        jml8.setOnClickListener(new View.OnClickListener() {
+        kurang8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(qty8!=0){
@@ -278,7 +298,7 @@ public class Bayar extends AppCompatActivity {
             }
         });
 
-        jml9.setOnClickListener(new View.OnClickListener() {
+        kurang9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(qty9!=0){
@@ -298,7 +318,7 @@ public class Bayar extends AppCompatActivity {
             }
         });
 
-        jml10.setOnClickListener(new View.OnClickListener() {
+        kurang10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(qty10!=0){

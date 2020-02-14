@@ -1,6 +1,6 @@
 kurang :
 1. ketika databse habis di delete, total harga bisa berkurang
-2. cara qty x harga. rumusnya udah tau, tapi gakbisa manggil fungsi yg berisi parameter dari activity
+---2. cara qty x harga. rumusnya udah tau, tapi gakbisa manggil fungsi yg berisi parameter dari activity
 lain
 3. saat reset, tulisan quantity gak bisa 0/kosong
 4. untuk menampilkan kembalian masih harus dipencet tulisannya, belum bisa otomatis tampil

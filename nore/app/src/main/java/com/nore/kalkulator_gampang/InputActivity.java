@@ -27,7 +27,7 @@ public class InputActivity extends AppCompatActivity {
         //dbHelper = new DatabaseHelper(this);
         isi_nama = (EditText) findViewById(R.id.isi_nama) ;
         isi_harga = (EditText) findViewById(R.id.isi_harga) ;
-        isi_jumlah = (EditText) findViewById(R.id.isi_jumlah);
+        isi_jumlah = (EditText) findViewById(R.id.isi_jumlah) ;
         btn_ok = (Button) findViewById(R.id.btn_ok);
         btn_cancel = (Button) findViewById(R.id.btn_cancel);
 
@@ -73,15 +73,16 @@ public class InputActivity extends AppCompatActivity {
 
         if(harga.isEmpty()){
             //error name is empty
-            Toast.makeText(this, "You must enter an price", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "You must enter a price", Toast.LENGTH_SHORT).show();
         }
 
         if(jumlah.isEmpty()){
-            Toast.makeText(this,"You must enter a quantity",Toast.LENGTH_SHORT).show();
+            //error name is empty
+            Toast.makeText(this, "You must enter a quantity", Toast.LENGTH_SHORT).show();
         }
 
         //create new person
-        Barang barang = new Barang(nama,harga,jumlah);
+        Barang barang = new Barang(nama, harga, jumlah);
         dbHelper.saveNewBarang(barang);
 
         //finally redirect back home

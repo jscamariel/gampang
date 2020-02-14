@@ -31,7 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(" CREATE TABLE " + TABLE_NAME + " (" +
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_BARANG_NAMA + " TEXT NOT NULL, " +
-                COLUMN_BARANG_HARGA + "TEXT NOT NULL, " +
+                COLUMN_BARANG_HARGA + " TEXT NOT NULL, " +
                 COLUMN_BARANG_JUMLAH + " TEXT NOT NULL );"
         );
 
