@@ -196,25 +196,44 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
                     builder.setNeutralButton("Hapus", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            DatabaseHelper dbHelper = new DatabaseHelper(mContext);
+                            AlertDialog.Builder builder2 = new AlertDialog.Builder(mContext);
+                            builder2.setTitle("Konfirmasi");
+                            builder2.setMessage("Anda yakin menghapus data?");
+                            builder2.setPositiveButton("Hapus", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    DatabaseHelper dbHelper = new DatabaseHelper(mContext);
 
 
-                            dbHelper.deleteBarangRecord(barang.getId(), mContext);
+                                    dbHelper.deleteBarangRecord(barang.getId(), mContext);
 
-                            mBarangList.remove(position);
-                            mRecyclerV.removeViewAt(position);
-                            notifyItemRemoved(position);
-                            notifyItemRangeChanged(position, mBarangList.size());
-                            notifyDataSetChanged();
-                            //if(mContext instanceof MainActivity){
-                            //    grandTotal();
-                            //}
+                                    mBarangList.remove(position);
+                                    mRecyclerV.removeViewAt(position);
+                                    notifyItemRemoved(position);
+                                    notifyItemRangeChanged(position, mBarangList.size());
+                                    notifyDataSetChanged();
+                                    //if(mContext instanceof MainActivity){
+                                    //    grandTotal();
+                                    //}
 
-                            //baruuuuu
-                            //if (position == mBarangList.size()-1) {
-                            //    grandTotal();
-                            //}
-                            onItemDeletedListener.onItemDeleted();
+                                    //baruuuuu
+                                    //if (position == mBarangList.size()-1) {
+                                    //    grandTotal();
+                                    //}
+                                    onItemDeletedListener.onItemDeleted();
+
+
+                                }
+                            });
+
+                            builder2.setNegativeButton("Batal", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+
+                            //disini
 
                         }
                     });
