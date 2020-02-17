@@ -138,7 +138,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
             Locale localeID = new Locale("in", "ID");
             final NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
             //onClick
-
+            setOnUpdateTotalListener(mListener);
                     holder.totalHargaTxtV.setText("Total Harga : "+formatRupiah.format((int)grandTotal()));
 
             holder.tombolbayar.setEnabled(false);
@@ -165,6 +165,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
                         qty = 0;
                         mBarangList.get(i).setJumlah(qty);
                     }
+
 
                     holder.totalHargaTxtV.setText("Total Harga : "+totalkosong);
                     //holder.quantity.setText(""+qty);
@@ -358,7 +359,9 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
     }
 
 
-
+    public void setOnUpdateTotalListener(Object object) {
+        mListener = (OnUpdateTotalListener) object;
+    }
 
     public interface OnUpdateTotalListener {
         void onUpdateTotal();
@@ -371,4 +374,9 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
         grandTotal();
     }
 
+
+
+    public void onUpdateTotal() {
+        grandTotal();
+    }
 }
