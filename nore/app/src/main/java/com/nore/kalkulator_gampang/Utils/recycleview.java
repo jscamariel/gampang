@@ -234,6 +234,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
                             });
 
                             //disini
+                            builder2.create().show();
 
                         }
                     });
