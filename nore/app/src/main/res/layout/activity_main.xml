@@ -37,20 +37,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
-
-
-
-
-
         </LinearLayout>
         <TextView
             android:id="@+id/total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Copyright CV. Nore Inovasi 2020"
+            android:text="© 2020 by cv.nore inovasi. All rights reserved."
             android:textColor="#ffffff"
-            android:textSize="15dp" />
+            android:textSize="10dp" />
     </LinearLayout>
 </ScrollView>
