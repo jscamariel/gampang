@@ -43,14 +43,14 @@
             android:textSize="20dp"
             android:tag="menambah" />
 
-                <TextView
-                    android:id="@+id/qty"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_weight="1"
-                    android:textColor="#FFFFFF"
-                    android:textSize="25dp" />
+            <TextView
+                android:id="@+id/qty"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp" />
 
         <TextView
             android:layout_width="wrap_content"

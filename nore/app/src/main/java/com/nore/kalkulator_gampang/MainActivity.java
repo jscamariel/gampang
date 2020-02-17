@@ -205,7 +205,13 @@ public class MainActivity extends AppCompatActivity implements OnItemDeletedList
 
     private void populaterecyclerView(String filter){
         dbHelper = new DatabaseHelper(this);
-        adapter = new recycleview(dbHelper.barangList(filter), this, mRecyclerView);
+        adapter = new recycleview(dbHelper.barangList(filter), this, mRecyclerView, new recycleview.OnUpdateTotalListener() {
+            @Override
+            public void onUpdateTotal() {
+                //adapter.grandTotal();
+
+            }
+        });
         //baru delete
         adapter.setOnItemDeletedListener(this);
         mRecyclerView.setAdapter(adapter);
