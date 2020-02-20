@@ -2,7 +2,7 @@ kurang :
 ---1. ketika databse habis di delete, total harga bisa berkurang
 ---2. cara qty x harga. rumusnya udah tau, tapi gakbisa manggil fungsi yg berisi parameter dari activity
 lain
-3. saat reset, tulisan quantity gak bisa 0/kosong, dan seharusnya yg direset hanya qty totalnya gak usah
+---3. saat reset, tulisan quantity gak bisa 0/kosong, dan seharusnya yg direset hanya qty totalnya gak usah
 ---4. untuk menampilkan kembalian masih harus dipencet tulisannya, belum bisa otomatis tampil
 ---5. tampilan recyler view biar nd jauh" jaraknya
 6. membuat tombol kembali, yang tidak numpuk
@@ -13,6 +13,7 @@ lain
 ---11. buat popup delete confirm
 12. jumlah barang diset 1 semua
 ---13. listener otomatis total harga
+14. membuat tombol bayar tidak ke scroll
 
 buat 2 versi:
 a. input pake edit text

@@ -163,10 +163,9 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
                         qty = 0;
                         mBarangList.get(i).setJumlah(qty);
                     }
-
-
-                    holder.totalHargaTxtV.setText("Total Harga : "+totalkosong);
-                    holder.quantity.setText(""+qty);
+                    notifyDataSetChanged();
+                    onItemDeletedListener.onClear();
+                    //holder.totalHargaTxtV.setText("Total Harga : "+totalkosong);
                 }
             });
         }

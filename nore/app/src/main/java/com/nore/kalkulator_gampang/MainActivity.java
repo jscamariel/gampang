@@ -262,4 +262,17 @@ public class MainActivity extends AppCompatActivity implements OnItemDeletedList
             //bayar.setEnabled(false);
         }
     }
+
+    @Override
+    public void onClear(){
+        mSubTotal=adapter.grandTotal();
+        if (mSubTotal != 0) {
+            //tv_total.setText("Total Harga: "+formatRupiah.format((int)mSubTotal));
+            //bayar.setEnabled(mSubTotal!=0);
+        }
+        else {
+            //tv_total.setText("Total Harga: 0");
+            //bayar.setEnabled(false);
+        }
+    }
 }
