@@ -23,7 +23,7 @@ import java.util.Locale;
 
 //import static com.nore.kalkulator_gampang.Utils.DatabaseHelper.TABLE_NAME;
 
-public class MainActivity extends AppCompatActivity implements OnItemDeletedListener { //implements ExampleDialog.ExampleDialogListener
+public class MainActivity extends AppCompatActivity implements OnItemDeletedListener{ //implements ExampleDialog.ExampleDialogListener
     //TextView tv_nama;
     //TextView tv_harga;
     Button btn_minus;
@@ -205,13 +205,7 @@ public class MainActivity extends AppCompatActivity implements OnItemDeletedList
 
     private void populaterecyclerView(String filter){
         dbHelper = new DatabaseHelper(this);
-        adapter = new recycleview(dbHelper.barangList(filter), this, mRecyclerView, new recycleview.OnUpdateTotalListener() {
-            @Override
-            public void onUpdateTotal() {
-                //adapter.grandTotal();
-
-            }
-        });
+        adapter = new recycleview(dbHelper.barangList(filter), this, mRecyclerView);
         //baru delete
         adapter.setOnItemDeletedListener(this);
         mRecyclerView.setAdapter(adapter);
@@ -246,6 +240,19 @@ public class MainActivity extends AppCompatActivity implements OnItemDeletedList
     @Override
     public void onItemDeleted() {
         mSubTotal = adapter.grandTotal();
+        if (mSubTotal != 0) {
+            //tv_total.setText("Total Harga: "+formatRupiah.format((int)mSubTotal));
+            //bayar.setEnabled(mSubTotal!=0);
+        }
+        else {
+            //tv_total.setText("Total Harga: 0");
+            //bayar.setEnabled(false);
+        }
+    }
+
+    @Override
+    public void onUpdateTotal(){
+        mSubTotal=adapter.grandTotal();
         if (mSubTotal != 0) {
             //tv_total.setText("Total Harga: "+formatRupiah.format((int)mSubTotal));
             //bayar.setEnabled(mSubTotal!=0);

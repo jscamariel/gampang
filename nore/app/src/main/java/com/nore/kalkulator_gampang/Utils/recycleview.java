@@ -49,7 +49,6 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
     //baru delete
     private OnItemDeletedListener onItemDeletedListener;
 
-    private OnUpdateTotalListener mListener;
 
 
     // Provide a reference to the views for each data item
@@ -98,12 +97,12 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public recycleview(List<Barang> myDataset, Context context, RecyclerView recyclerView, OnUpdateTotalListener listener) {
+    public recycleview(List<Barang> myDataset, Context context, RecyclerView recyclerView) {
         mBarangList = myDataset;
         mContext = context;
         mRecyclerV = recyclerView;
         //baru
-        mListener=listener;
+
     }
 
     // Create new views (invoked by the layout manager)
@@ -138,7 +137,6 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
             Locale localeID = new Locale("in", "ID");
             final NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
             //onClick
-            setOnUpdateTotalListener(mListener);
                     holder.totalHargaTxtV.setText("Total Harga : "+formatRupiah.format((int)grandTotal()));
 
             holder.tombolbayar.setEnabled(false);
@@ -168,7 +166,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
 
 
                     holder.totalHargaTxtV.setText("Total Harga : "+totalkosong);
-                    //holder.quantity.setText(""+qty);
+                    holder.quantity.setText(""+qty);
                 }
             });
         }
@@ -258,7 +256,10 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
                 public void onClick(View v) {
                     barang.setJumlah(barang.getJumlah()+1);
                     holder.quantity.setText(""+barang.getJumlah());
+                    //holder.totalHargaTxtV.setText("Total Harga : "+grandTotal());
                     //Toast.makeText(mContext,"id ke : "+barang.getId(),Toast.LENGTH_SHORT).show();
+                    notifyDataSetChanged();
+                    onItemDeletedListener.onUpdateTotal();
                 }
             });
 
@@ -268,8 +269,10 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
                     if(barang.getJumlah()!=0){
                         barang.setJumlah(barang.getJumlah()-1);
                         holder.quantity.setText(""+barang.getJumlah());
+                        notifyDataSetChanged();
+                        onItemDeletedListener.onUpdateTotal();
                     }
-
+                   // holder.totalHargaTxtV.setText("Total Harga : "+grandTotal());
 
                     //Toast.makeText(mContext,"id ke : "+barang.getId(),Toast.LENGTH_SHORT).show();
                 }
@@ -317,7 +320,7 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
             totalPrice += Integer.parseInt(mBarangList.get(i).getHarga()) * mBarangList.get(i).getJumlah();
         }
         //baru
-        mListener.onUpdateTotal();
+
         return  totalPrice;
     }
 
@@ -358,25 +361,4 @@ public class recycleview extends RecyclerView.Adapter<recycleview.ViewHolder> {
         onItemDeletedListener = (OnItemDeletedListener) object;
     }
 
-
-    public void setOnUpdateTotalListener(Object object) {
-        mListener = (OnUpdateTotalListener) object;
-    }
-
-    public interface OnUpdateTotalListener {
-        void onUpdateTotal();
-    }
-
-
-
-
-    public void setNewPriceText(){
-        grandTotal();
-    }
-
-
-
-    public void onUpdateTotal() {
-        grandTotal();
-    }
 }
