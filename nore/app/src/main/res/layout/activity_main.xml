@@ -4,33 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0DD116"
+    android:background="#3AB775"
     tools:context=".MainActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:background="#108610"
+                android:background="#2D7236"
                 android:text="+"
                 android:textColor="#fff"
                 android:textSize="30dp" />
-    </LinearLayout>
+        </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/daftarBarang"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/daftarBarang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,6 +39,7 @@
             android:orientation="vertical">
 
         </LinearLayout>
+
         <TextView
             android:id="@+id/total"
             android:layout_width="wrap_content"

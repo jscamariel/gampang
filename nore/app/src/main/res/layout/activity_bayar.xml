@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0DD116"
+    android:background="#3AB775"
     android:orientation="vertical"
     tools:context=".Bayar">
 
@@ -13,20 +13,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BAYAR:"
-        android:textColor="#ffffff"
-        android:textSize="30sp" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BAYAR:"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
 
-    <TextView
-        android:id="@+id/totalbayar"
-        android:layout_width="200dp"
-        android:layout_height="45dp"
-        android:textColor="#192A9C"
-        android:textSize="30dp" />
+        <TextView
+            android:id="@+id/totalbayar"
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:textColor="#192A9C"
+            android:textSize="30dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -34,47 +34,47 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/min10"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:text="-"
-        android:textSize="25dp" />
+        <Button
+            android:id="@+id/min10"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="-"
+            android:textSize="25dp" />
 
-    <Button
-        android:id="@+id/seratusribu"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:textSize="23dp"
-        android:text="100.000" />
+        <Button
+            android:id="@+id/seratusribu"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:text="100.000"
+            android:textSize="23dp" />
 
-    <TextView
-        android:id="@+id/jml10"
-        android:layout_width="35dp"
-        android:textColor="#FFFFFF"
-        android:layout_height="40dp"
-        android:textSize="25dp" />
+        <TextView
+            android:id="@+id/jml10"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
 
-    <Button
-        android:id="@+id/min9"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="-" />
+        <Button
+            android:id="@+id/min9"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="-"
+            android:textSize="25dp" />
 
-    <Button
-        android:id="@+id/limapuluhribu"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="50.000" />
+        <Button
+            android:id="@+id/limapuluhribu"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:text="50.000"
+            android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/jml9"
-        android:layout_width="35dp"
-        android:textColor="#FFFFFF"
-        android:layout_height="40dp"
-        android:textSize="25dp" />
+        <TextView
+            android:id="@+id/jml9"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -82,40 +82,40 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/min8"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="-" />
+        <Button
+            android:id="@+id/min8"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="-"
+            android:textSize="25dp" />
 
-    <Button
-        android:id="@+id/duapuluhribu"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="20.000" />
+        <Button
+            android:id="@+id/duapuluhribu"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:text="20.000"
+            android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/jml8"
-        android:layout_width="35dp"
-        android:layout_height="40dp"
-        android:textColor="#FFFFFF"
-        android:textSize="25dp" />
+        <TextView
+            android:id="@+id/jml8"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
 
-    <Button
-        android:id="@+id/min7"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="-" />
+        <Button
+            android:id="@+id/min7"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="-"
+            android:textSize="25dp" />
 
-    <Button
-        android:id="@+id/sepuluhribu"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="10.000" />
+        <Button
+            android:id="@+id/sepuluhribu"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:text="10.000"
+            android:textSize="25dp" />
 
         <TextView
             android:id="@+id/jml7"
@@ -130,40 +130,40 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/min6"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="-" />
+        <Button
+            android:id="@+id/min6"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="-"
+            android:textSize="25dp" />
 
-    <Button
-        android:id="@+id/limaribu"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="5.000" />
+        <Button
+            android:id="@+id/limaribu"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:text="5.000"
+            android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/jml6"
-        android:layout_width="35dp"
-        android:textColor="#FFFFFF"
-        android:layout_height="40dp"
-        android:textSize="25dp" />
+        <TextView
+            android:id="@+id/jml6"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
 
-    <Button
-        android:id="@+id/min5"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="-" />
+        <Button
+            android:id="@+id/min5"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="-"
+            android:textSize="25dp" />
 
-    <Button
-        android:id="@+id/duaribu"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="2.000" />
+        <Button
+            android:id="@+id/duaribu"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:text="2.000"
+            android:textSize="25dp" />
 
         <TextView
             android:id="@+id/jml5"
@@ -176,49 +176,49 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/min4"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="-" />
+        <Button
+            android:id="@+id/min4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="-"
+            android:textSize="25dp" />
 
-    <Button
-        android:id="@+id/seribu"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="1.000" />
+        <Button
+            android:id="@+id/seribu"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:text="1.000"
+            android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/jml4"
-        android:layout_width="35dp"
-        android:layout_height="40dp"
-        android:textColor="#FFFFFF"
-        android:textSize="25dp" />
+        <TextView
+            android:id="@+id/jml4"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
 
-    <Button
-        android:id="@+id/min3"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="-" />
+        <Button
+            android:id="@+id/min3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="-"
+            android:textSize="25dp" />
 
-    <Button
-        android:id="@+id/limaratus"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="500" />
+        <Button
+            android:id="@+id/limaratus"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:text="500"
+            android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/jml3"
-        android:layout_width="35dp"
-        android:layout_height="40dp"
-        android:textColor="#FFFFFF"
-        android:textSize="25dp" />
+        <TextView
+            android:id="@+id/jml3"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -226,47 +226,47 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/min2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="-" />
+        <Button
+            android:id="@+id/min2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="-"
+            android:textSize="25dp" />
 
-    <Button
-        android:id="@+id/duaratus"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="200" />
+        <Button
+            android:id="@+id/duaratus"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:text="200"
+            android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/jml2"
-        android:layout_width="35dp"
-        android:layout_height="40dp"
-        android:textColor="#FFFFFF"
-        android:textSize="25dp" />
+        <TextView
+            android:id="@+id/jml2"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
 
-    <Button
-        android:id="@+id/min1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:textSize="25dp"
-        android:text="-" />
+        <Button
+            android:id="@+id/min1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="-"
+            android:textSize="25dp" />
 
-    <Button
-        android:id="@+id/seratus"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:textSize="23dp"
-        android:text="100" />
+        <Button
+            android:id="@+id/seratus"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:text="100"
+            android:textSize="23dp" />
 
-    <TextView
-        android:id="@+id/jml1"
-        android:layout_width="35dp"
-        android:layout_height="40dp"
-        android:textColor="#FFFFFF"
-        android:textSize="25dp" />
+        <TextView
+            android:id="@+id/jml1"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -274,21 +274,21 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_kembalian"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:background="#033F0D"
-        android:text="Kembalian :"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp" />
+        <Button
+            android:id="@+id/btn_kembalian"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="#418F41"
+            android:text="Kembalian :"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
 
-    <TextView
-        android:id="@+id/kembalian"
-        android:layout_width="400dp"
-        android:layout_height="70dp"
-        android:textColor="#325BEB"
-        android:textSize="35dp" />
+        <TextView
+            android:id="@+id/kembalian"
+            android:layout_width="400dp"
+            android:layout_height="70dp"
+            android:textColor="#325BEB"
+            android:textSize="35dp" />
     </LinearLayout>
 </LinearLayout>
