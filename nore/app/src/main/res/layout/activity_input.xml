@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0DD116"
+    android:background="#3AB775"
     android:orientation="vertical"
     android:padding="10dp"
     tools:context="com.nore.kalkulator_gampang.EditActivity">
@@ -38,7 +38,7 @@
         android:id="@+id/btn_ok"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#108610"
+        android:background="#2D7236"
         android:text="Tambah"
         android:textColor="#ffffff" />
 
@@ -46,7 +46,7 @@
         android:id="@+id/btn_cancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#18A018"
+        android:background="#418F41"
         android:text="Batal"
         android:textColor="#ffffff" />
 </LinearLayout>
