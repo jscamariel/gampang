@@ -370,10 +370,10 @@ public class Bayar extends AppCompatActivity implements OnKembalianListener{
     public void onKembalian() {
         change = (uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal;
         if(uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10 < pricetotal){
-            kembalian.setText("Kurang "+formatRupiah.format((int)change));
+            kembalian.setText(" "+formatRupiah.format((int)change));
         }else{
             //change = (uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal;
-            kembalian.setText(formatRupiah.format((int)change));
+            kembalian.setText(" "+formatRupiah.format((int)change));
         }
     }
 }

@@ -9,7 +9,7 @@ lain
 ---7. membuat harga ada titiknya
 ---8. membuat tombol bayar enabled
 ---9. membuat qty start dari 1 semua
-10. membuat tombol input enabled
+---10. membuat tombol input enabled
 ---11. buat popup delete confirm
 12. jumlah barang diset 1 semua
 ---13. listener otomatis total harga
