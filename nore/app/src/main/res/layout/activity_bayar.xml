@@ -25,7 +25,7 @@
             android:id="@+id/totalbayar"
             android:layout_width="200dp"
             android:layout_height="45dp"
-            android:textColor="#192A9C"
+            android:textColor="#ffffff"
             android:textSize="30dp" />
     </LinearLayout>
 
@@ -274,21 +274,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <Button
+        <TextView
             android:id="@+id/btn_kembalian"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="#418F41"
-            android:text="Kembalian :"
+            android:text="KEMBALIAN :"
             android:textColor="#FFFFFF"
-            android:textSize="20dp" />
+            android:textSize="25dp" />
 
         <TextView
             android:id="@+id/kembalian"
             android:layout_width="400dp"
             android:layout_height="70dp"
-            android:textColor="#325BEB"
+            android:textColor="#ffffff"
             android:textSize="35dp" />
     </LinearLayout>
 </LinearLayout>
