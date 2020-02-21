@@ -18,14 +18,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="BAYAR : "
-            android:textColor="#ffffff"
+            android:textColor="#FFFFFF"
             android:textSize="30sp" />
 
         <TextView
             android:id="@+id/totalbayar"
             android:layout_width="200dp"
             android:layout_height="45dp"
-            android:textColor="#ffffff"
+            android:textColor="#2D7236"
             android:textSize="30dp" />
     </LinearLayout>
 
@@ -38,7 +38,7 @@
             android:id="@+id/min10"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:backgroundTint="#C0A1A1"
+            android:backgroundTint="#B8B0B0"
             android:text="-"
             android:textSize="25dp" />
 
@@ -60,7 +60,7 @@
             android:id="@+id/min9"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:backgroundTint="#C0A1A1"
+            android:backgroundTint="#B8B0B0"
             android:text="-"
             android:textSize="25dp" />
 
@@ -88,7 +88,7 @@
             android:id="@+id/min8"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:backgroundTint="#C0A1A1"
+            android:backgroundTint="#B8B0B0"
             android:text="-"
             android:textSize="25dp" />
 
@@ -110,7 +110,7 @@
             android:id="@+id/min7"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:backgroundTint="#C0A1A1"
+            android:backgroundTint="#B8B0B0"
             android:text="-"
             android:textSize="25dp" />
 
@@ -138,7 +138,7 @@
             android:id="@+id/min6"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:backgroundTint="#C0A1A1"
+            android:backgroundTint="#B8B0B0"
             android:text="-"
             android:textSize="25dp" />
 
@@ -160,7 +160,7 @@
             android:id="@+id/min5"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:backgroundTint="#C0A1A1"
+            android:backgroundTint="#B8B0B0"
             android:text="-"
             android:textSize="25dp" />
 
@@ -188,7 +188,7 @@
             android:id="@+id/min4"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:backgroundTint="#C0A1A1"
+            android:backgroundTint="#B8B0B0"
             android:text="-"
             android:textSize="25dp" />
 
@@ -210,7 +210,7 @@
             android:id="@+id/min3"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:backgroundTint="#C0A1A1"
+            android:backgroundTint="#B8B0B0"
             android:text="-"
             android:textSize="25dp" />
 
@@ -238,7 +238,7 @@
             android:id="@+id/min2"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:backgroundTint="#C0A1A1"
+            android:backgroundTint="#B8B0B0"
             android:text="-"
             android:textSize="25dp" />
 
@@ -260,7 +260,7 @@
             android:id="@+id/min1"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:backgroundTint="#C0A1A1"
+            android:backgroundTint="#B8B0B0"
             android:text="-"
             android:textSize="25dp" />
 
@@ -291,7 +291,7 @@
             android:layout_marginTop="10dp"
             android:text="KEMBALIAN :"
             android:textColor="#FFFFFF"
-            android:textSize="25dp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/kembalian"

@@ -47,6 +47,7 @@ public class Bayar extends AppCompatActivity implements OnKembalianListener{
     int qty9 = 0;
     int qty10 = 0;
     TextView kembalian;
+    TextView textview5;
 
     //boolean clicked1 = false;
     TextView btn_kembalian;
@@ -116,6 +117,8 @@ public class Bayar extends AppCompatActivity implements OnKembalianListener{
         kembalian = (TextView) findViewById(R.id.kembalian);
 
         btn_kembalian = (TextView) findViewById(R.id.btn_kembalian);
+
+        textview5 = (TextView) findViewById(R.id.textView5);
 
 
         Intent membayar = getIntent();
@@ -350,6 +353,14 @@ public class Bayar extends AppCompatActivity implements OnKembalianListener{
                 onKembalianListener.onKembalian();
             }
         });
+
+        totalbayar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent kemenu = new Intent(Bayar.this,MainActivity.class);
+                startActivity(kemenu);
+            }
+        });
                 //baruu
                 setOnKembalianListener(this);
                 change = (uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal;
@@ -359,6 +370,8 @@ public class Bayar extends AppCompatActivity implements OnKembalianListener{
                     //change = (uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal;
                     kembalian.setText(formatRupiah.format((int)change));
                 }
+
+
 
     }
 
