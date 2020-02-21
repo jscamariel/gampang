@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +33,17 @@ public class InputActivity extends AppCompatActivity {
         btn_ok = (Button) findViewById(R.id.btn_ok);
         btn_cancel = (Button) findViewById(R.id.btn_cancel);
 
+        String nama = isi_nama.getText().toString().trim();
+        String harga = isi_harga.getText().toString().trim();
+        String jumlah = isi_jumlah.getText().toString().trim();
+
+        btn_ok.setEnabled(false);
+
+        isi_nama.addTextChangedListener(execute);
+        isi_harga.addTextChangedListener(execute);
+        isi_jumlah.addTextChangedListener(execute);
+
+
 
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +62,38 @@ public class InputActivity extends AppCompatActivity {
                     startActivity(ganti);
                 }
         */
-                saveBarang();
+                //saveBarang();
+                String nama = isi_nama.getText().toString().trim();
+                String harga = isi_harga.getText().toString().trim();
+                String jumlah = isi_jumlah.getText().toString().trim();
+
+
+                dbHelper = new DatabaseHelper(InputActivity.this);
+                if(nama.isEmpty()){
+                    //error name is empty
+                    Toast.makeText(InputActivity.this, "You must enter a name", Toast.LENGTH_SHORT).show();
+                }
+
+                if(harga.isEmpty()){
+                    //error name is empty
+                    Toast.makeText(InputActivity.this, "You must enter a price", Toast.LENGTH_SHORT).show();
+                }
+
+                if(jumlah.isEmpty()){
+                    //error name is empty
+                    Toast.makeText(InputActivity.this, "You must enter a quantity", Toast.LENGTH_SHORT).show();
+                }
+
+
+                //create new person
+                int jml = Integer.parseInt(jumlah);
+                Barang barang = new Barang(nama, harga, jml);
+                dbHelper.saveNewBarang(barang);
+
+                //finally redirect back home
+                // NOTE you can implement an sqlite callback then redirect on success delete
+                goBackHome();
+
             }
         });
 
@@ -61,37 +105,28 @@ public class InputActivity extends AppCompatActivity {
         });
     }
 
-    private void saveBarang(){
-        String nama = isi_nama.getText().toString().trim();
-        String harga = isi_harga.getText().toString().trim();
-        String jumlah = isi_jumlah.getText().toString().trim();
-        dbHelper = new DatabaseHelper(this);
+    private TextWatcher execute = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-        if(nama.isEmpty()){
-            //error name is empty
-            Toast.makeText(this, "You must enter a name", Toast.LENGTH_SHORT).show();
         }
 
-        if(harga.isEmpty()){
-            //error name is empty
-            Toast.makeText(this, "You must enter a price", Toast.LENGTH_SHORT).show();
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            String nama = isi_nama.getText().toString().trim();
+            String harga = isi_harga.getText().toString().trim();
+            String jumlah = isi_jumlah.getText().toString().trim();
+
+            btn_ok.setEnabled(!nama.isEmpty() && !harga.isEmpty() && !jumlah.isEmpty());
+
         }
 
-        if(jumlah.isEmpty()){
-            //error name is empty
-            Toast.makeText(this, "You must enter a quantity", Toast.LENGTH_SHORT).show();
+        @Override
+        public void afterTextChanged(Editable s) {
+
         }
+    };
 
-
-        //create new person
-        int jml = Integer.parseInt(jumlah);
-        Barang barang = new Barang(nama, harga, jml);
-        dbHelper.saveNewBarang(barang);
-
-        //finally redirect back home
-        // NOTE you can implement an sqlite callback then redirect on success delete
-        goBackHome();
-    }
     private void goBackHome(){
         startActivity(new Intent(InputActivity.this, MainActivity.class));
     }
