@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -366,9 +367,11 @@ public class Bayar extends AppCompatActivity implements OnKembalianListener{
                 change = (uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal;
                 if(uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10 < pricetotal){
                     kembalian.setText(" "+formatRupiah.format((int)change));
+                    Toast.makeText(Bayar.this,"Uang kurang "+formatRupiah.format((int)change),Toast.LENGTH_LONG).show();
                 }else{
                     //change = (uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal;
                     kembalian.setText(formatRupiah.format((int)change));
+                    //Toast.makeText(Bayar.this,"Kembalian anda "+formatRupiah.format((int)change),Toast.LENGTH_LONG).show();
                 }
 
 
@@ -384,9 +387,11 @@ public class Bayar extends AppCompatActivity implements OnKembalianListener{
         change = (uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal;
         if(uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10 < pricetotal){
             kembalian.setText(" "+formatRupiah.format((int)change));
+            Toast.makeText(Bayar.this,"Uang kurang "+formatRupiah.format((int)change),Toast.LENGTH_LONG).show();
         }else{
             //change = (uang1+uang2+uang3+uang4+uang5+uang6+uang7+uang8+uang9+uang10)-pricetotal;
             kembalian.setText(" "+formatRupiah.format((int)change));
+            //Toast.makeText(Bayar.this,"Kembalian anda "+formatRupiah.format((int)change),Toast.LENGTH_LONG).show();
         }
     }
 }
